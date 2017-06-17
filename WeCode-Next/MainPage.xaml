@@ -14,10 +14,9 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="bgGrid" Grid.ColumnSpan="2"/>
         <Grid Grid.Column="0">
-            <Grid Background="{ThemeResource SystemChromeMediumColor}" Opacity="0.6" Grid.RowSpan="2"/>
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.6" Grid.RowSpan="2"/>
         </Grid>
         <Frame>
-            
-        </Frame>
+</Frame>
     </Grid>
 </Page>
