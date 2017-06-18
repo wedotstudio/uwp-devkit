@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using WeCode_Next.DataModel;
+using WeCode_Next.Pages;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
@@ -30,6 +32,25 @@ namespace WeCode_Next
         {
             this.InitializeComponent();
             InitializeUI();
+            InitializeList();
+
+            Loaded += MainPage_Loaded;
+        }
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            view.SelectedIndex = 0;
+            frame.Navigate(typeof(Home));
+        }
+
+        private void InitializeList()
+        {
+            List<Nav> NavList = new List<Nav>();
+
+            NavList.Add(new Nav { Icon = "", Name = "Home", PageType = typeof(Home) });
+            NavList.Add(new Nav { Icon = "", Name = "System Information", PageType = typeof(SystemInfo) });
+
+            view.ItemsSource = NavList;
         }
 
         private void InitializeUI()
@@ -43,9 +64,9 @@ namespace WeCode_Next
             titleBar.ButtonForegroundColor = (isDark) ? Colors.White : Colors.Black;
             Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
 
-            initializeFrostedGlass(bgGrid);
+            InitializeFrostedGlass(bgGrid);
         }
-        private void initializeFrostedGlass(UIElement glassHost)
+        private void InitializeFrostedGlass(UIElement glassHost)
         {
             Visual hostVisual = ElementCompositionPreview.GetElementVisual(glassHost);
             Compositor compositor = hostVisual.Compositor;
@@ -56,6 +77,17 @@ namespace WeCode_Next
             var bindSizeAnimation = compositor.CreateExpressionAnimation("hostVisual.Size");
             bindSizeAnimation.SetReferenceParameter("hostVisual", hostVisual);
             glassVisual.StartAnimation("Size", bindSizeAnimation);
+        }
+
+        private void OnNavigatingToPage(object sender, NavigatingCancelEventArgs e)
+        {
+
+        }
+
+        private void ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var items = (Nav)e.ClickedItem;
+            frame.Navigate(items.PageType);
         }
     }
 }

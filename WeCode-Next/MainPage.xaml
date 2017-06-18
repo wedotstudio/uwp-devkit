@@ -14,9 +14,53 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="bgGrid" Grid.ColumnSpan="2"/>
         <Grid Grid.Column="0">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.6" Grid.RowSpan="2"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.5" Grid.RowSpan="2"/>
+            <Grid Grid.Row="0" Margin="10,10,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="Assets/Square44x44Logo.altform-unplated_targetsize-256.png" Height="40" Grid.Column="0"/>
+                <TextBlock Text="WeCode" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
+                <Button Grid.Column="2" Height="40" Width="40" Background="Transparent">
+                    <Button.Content>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE15F;"/>
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Column="3" Height="40" Width="40"  Background="Transparent">
+                    <Button.Content>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE115;"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+            <ListView  Grid.Row="1"  x:Name="view" IsItemClickEnabled="True" ItemClick="ItemClick" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Padding="5" Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" Padding="5,10"/>
+                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
-        <Frame>
-</Frame>
+        <Frame x:Name="frame" Grid.Column="1" >
+            <Frame.ContentTransitions>
+                <TransitionCollection>
+                    <NavigationThemeTransition>
+                        <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                            <EntranceNavigationTransitionInfo/>
+                        </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    </NavigationThemeTransition>
+                </TransitionCollection>
+            </Frame.ContentTransitions>
+        </Frame>
     </Grid>
 </Page>
