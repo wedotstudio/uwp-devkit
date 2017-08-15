@@ -1,0 +1,97 @@
+General,ms-call:,launch call app
+General,ms-call:settings,Launches the Calls app settings page.
+General,ms-chat:,Launches the Messaging app.
+General,ms-chat:?ContactID={contacted},Allows the messaging application to be launched with a particular contact's information.
+General,ms-chat:?Body={body},Allows the messaging application to be launched with a string to use as the content of the message.
+General,ms-chat:?Addresses={address}&Body={body},"Allows the messaging application to be launched with a particular addresses' information, and with a string to use as the content of the message. Note: Addresses can be concatenated."
+General,ms-chat:?TransportId={transportId},Allows the messaging application to be launched with a particular transport ID.
+General,mailto:,Launches the default email app.
+General,mailto:[email address],Launches the email app and creates a new message with the specified email address on the To line. Note that the email is not sent until the user taps send.
+General,http:,Launches the default web browser.
+General,ms-yellowpage:?input=[keyword]&method=[String|T9],Launches the installed Point of Interest (POI) search app that supports this new URI.
+Maps,bingmaps:,Opens the Maps app.
+Maps,bingmaps:?cp=40.726966~-74.006076,Displays a map centered over New York City.
+Maps,bingmaps:?cp=40.726966~-74.006076&lvl=10,Displays a map centered over New York City with a zoom level of 10.
+Maps,bingmaps:?bb=39.719_-74.52~41.71_-73.5,Displays a map of New York City with the size of the screen as the bounding box.
+Maps,bingmaps:?bb=39.719_-74.52~41.71_-73.5&cp=47~-122,"Displays a map of New York City, which is the area specified in the bounding box argument. The center point for Seattle specified in the cp argument is ignored."
+Maps,bingmaps:?bb=39.719_-74.52~41.71_-73.5&cp=47~-122&lvl=8,"Displays a map of New York, which is the area specified in the bb argument. The cp argument, which specifies Seattle, is ignored because cp and lvl are ignored when bb is specified."
+Maps,bingmaps:?collection=point.36.116584_-115.176753_Caesars%20Palace&lvl=16,Displays a map with a point named Caesars Palace (in Las Vegas) and sets the zoom level to 16.
+Maps,bingmaps:?collection=point.40.726966_-74.006076_Some%255FBusiness,Displays a map with a point named Some_Business (in Las Vegas).
+Maps,bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a,Displays a map of NYC with traffic on and aerial map style.
+Maps,bingmaps:?cp=47.6204~-122.3491&sty=3d,Displays a 3D view of the Space Needle.
+Maps,bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165,"Displays a 3D view of the Space Needle with a radius of 200m, a pitch or 75 degrees, and a heading of 165 degrees."
+Maps,bingmaps:?cp=47.6204~-122.3491&ss=1,Displays a Streetside view of the Space Needle.
+Settings,ms-settings:,Landing page for Settings
+Settings,ms-settings:screenrotation,Display
+Settings,ms-settings:notifications,Notifications & actions
+Settings,ms-settings:phone,Phone
+Settings,ms-settings:messaging,Messaging
+Settings,ms-settings:batterysaver,Battery Saver
+Settings,ms-settings:batterysaver-settings,Battery Saver / Battery saver settings
+Settings,ms-settings:batterysaver-usagedetails,Battery Saver / Battery use
+Settings,ms-settings:powersleep,Power & sleep
+Settings,ms-settings:deviceencryption,Desktop: About/Mobile: Device encryption
+Settings,ms-settings:maps,Offline Maps
+Settings,ms-settings:about,About
+Settings,ms-settings:camera,Default camera
+Settings,ms-settings:bluetooth,Bluetooth
+Settings,ms-settings:mousetouchpad,Mouse & touchpad
+Settings,ms-settings:nfctransactions,NFC
+Settings,ms-settings:network-wifi,Wi-Fi
+Settings,ms-settings:network-airplanemode,Airplane mode
+Settings,ms-settings:datausage,Data usage
+Settings,ms-settings:network-cellular,Cellular & SIM
+Settings,ms-settings:network-mobilehotspot,Mobile hotspot
+Settings,ms-settings:network-proxy,Proxy
+Settings,ms-settings:personalization,Personalization (category)
+Settings,ms-settings:personalization-background,Background
+Settings,ms-settings:personalization-colors,Colors
+Settings,ms-settings:sounds,Sounds
+Settings,ms-settings:lockscreen,Lock screen
+Settings,ms-settings:emailandaccounts,Your email and accounts
+Settings,ms-settings:workplace,Work access
+Settings,ms-settings:sync,Sync your settings
+Settings,ms-settings:dateandtime,Date & time
+Settings,ms-settings:regionlanguage,Region & language
+Settings,ms-settings:easeofaccess-narrator,Narrator
+Settings,ms-settings:easeofaccess-magnifier,Magnifier
+Settings,ms-settings:easeofaccess-highcontrast,High contrast
+Settings,ms-settings:easeofaccess-closedcaptioning,Closed captions
+Settings,ms-settings:easeofaccess-keyboard,Keyboard
+Settings,ms-settings:easeofaccess-mouse,Mouse
+Settings,ms-settings:easeofaccess-otheroptions,Other options
+Settings,ms-settings:privacy-location,Location
+Settings,ms-settings:privacy-webcam,Camera
+Settings,ms-settings:privacy-microphone,Microphone
+Settings,ms-settings:privacy-motion,Motion
+Settings,ms-settings:privacy-speechtyping,"Speech, inking & typing"
+Settings,ms-settings:privacy-accountinfo,Account info
+Settings,ms-settings:privacy-contacts,Contacts
+Settings,ms-settings:privacy-calendar,Calendar
+Settings,ms-settings:privacy-callhistory,Call history
+Settings,ms-settings:privacy-email,Email
+Settings,ms-settings:privacy-messaging,Messaging
+Settings,ms-settings:privacy-radios,Radios
+Settings,ms-settings:privacy-backgroundapps,Background Apps
+Settings,ms-settings:privacy-customdevices,Other devices
+Settings,ms-settings:privacy-feedback,Feedback & diagnostics
+Settings,ms-settings:developers,For developers
+People,ms-people:,Allows other apps to launch the People app Main page.
+People,ms-people:settings,Allows other apps to launch the People app Settings page.
+People,ms-people:search?SearchString=<contactsearchinfo>,Allows other apps to provide a search string that will launch the People app with the result page of the search.
+People,ms-people:viewcontact:?ContactId=<contactid>&AggregatedId=<aggid>&PhoneNumber= <phonenum>&Email=<email>&ContactName=<name>&Contact=<contactobj>,"Launches to an existing contact card, if the contact is found. Or, launches to a temporary contact card, if no contact is found. If no input parameter is supplied, we will launch the People App with a contact list."
+People,ms-people:savetocontact?PhoneNumber= <phonenum>&Email=<email>&ContactName=<name>,Launches to a Save-contact page within the People app to save the given contact with the supplied phone number or email address.
+Store,ms-windows-store://home,Launches the home page of the Store.
+Store,ms-windows-store://navigatetopage/?Id=Apps,Launches Apps Section in the Store.
+Store,ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL,Launches the product details page (PDP) for a product.(Product ID)
+Store,ms-windows-store://pdp/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe,Launches the product details page (PDP) for a product.(Package Friendly Name)
+Store,ms-windows-store://settings,Launches the Store settings page.
+Store,ms-windows-store://downloadsandupdates,Launches the downloads and updates page.
+Store,ms-windows-store://publisher/?name=Microsoft Corporation,Launches a search for products from the specified publisher. Spaces in the name are allowed.
+Store,ms-windows-store://browse/?type=Apps&cat=Productivity,Launches a search for products in a category.
+Store,ms-windows-store://search/?query=OneNote,Launches a search for the specified query. Spaces in the query are allowed.
+Store,ms-windows-store://assoc/?FileExt=pdf,Launches a search for products associated with a file extension.
+Store,ms-windows-store://assoc/?Protocol=ms-word,Launches a search for products associated with a protocol.
+Store,ms-windows-store://assoc/?Tags=Photos_Rich_Media_Edit,Launches a search for products associated with one or more tags. Tags should be separated by commas.
+Store,ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe,Launches the write a review experience for a product.(Package Family Name)
+Store,ms-windows-store://review/?ProductId=9WZDNCRFHVJL,Launches the write a review experience for a product.(Product ID)

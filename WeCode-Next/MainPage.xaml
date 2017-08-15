@@ -27,7 +27,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Image Source="Assets/Square44x44Logo.altform-unplated_targetsize-256.png" Height="40" Grid.Column="0"/>
-                <TextBlock Text="WeCode" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
+                <TextBlock Text="UWP DevKit" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
                 <Button Grid.Column="2" Height="40" Width="40" Background="Transparent">
                     <Button.Content>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE15F;"/>
@@ -44,7 +44,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Padding="5" Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" Padding="5,10"/>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" Padding="5,10,15,10"/>
                             <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </DataTemplate>

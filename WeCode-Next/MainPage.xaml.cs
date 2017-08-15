@@ -1,31 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System.Collections.Generic;
 using WeCode_Next.DataModel;
 using WeCode_Next.Pages;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI;
 using Windows.UI.Composition;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Hosting;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace WeCode_Next
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -45,11 +30,14 @@ namespace WeCode_Next
 
         private void InitializeList()
         {
-            List<Nav> NavList = new List<Nav>();
-
-            NavList.Add(new Nav { Icon = "", Name = "Home", PageType = typeof(Home) });
-            NavList.Add(new Nav { Icon = "", Name = "System Information", PageType = typeof(SystemInfo) });
-
+            List<Nav> NavList = new List<Nav>
+            {
+                new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
+                new Nav { Icon = "", Name = "System Information", PageType = typeof(SystemInfo) },
+                new Nav { Icon = "", Name = "Icon Browser", PageType = typeof(IconBrowser) },
+                new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
+                new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) }
+            };
             view.ItemsSource = NavList;
         }
 

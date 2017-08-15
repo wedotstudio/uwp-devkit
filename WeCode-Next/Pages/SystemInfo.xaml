@@ -9,23 +9,20 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6"/>
-            <TextBlock Text="System Information" VerticalAlignment="Bottom"  FontSize="30%" Margin="10"  Foreground="White"/>
+            <TextBlock Text="System Information" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
         </Grid>
         <Grid Grid.Row="1"  >
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
             <ScrollViewer>
                 <StackPanel Margin="20">
                     <TextBlock Text="System" TextDecorations="Underline" FontWeight="Bold"/>
-                    <Grid>
+                    <Grid Margin="15,15,0,0">
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -35,15 +32,19 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="Device Family:" Grid.Column="0" Grid.Row="0"/>
-                        <TextBlock Text="PC" Grid.Column="1" Grid.Row="0"/>
-                        <TextBlock Text="System Version:" Grid.Column="0" Grid.Row="1" Height="20" VerticalAlignment="Bottom"/>
-                        <TextBlock Text="10.0.16215.1000" Grid.Column="1" Grid.Row="1"/>
+                        <TextBlock Text="Device Family: " Grid.Column="0" Grid.Row="0"/>
+                        <TextBlock x:Name="df" Grid.Column="1" Grid.Row="0"/>
+                        <TextBlock Text="System Version: " Grid.Column="0" Grid.Row="1" Height="20" VerticalAlignment="Bottom"/>
+                        <TextBlock x:Name="sv" Grid.Column="1" Grid.Row="1"/>
                         <TextBlock Text="Device Model: " Grid.Column="0" Grid.Row="2" Height="20" VerticalAlignment="Bottom"/>
-                        <TextBlock Text="Surface Book" Grid.Column="1" Grid.Row="2"/>
+                        <TextBlock x:Name="dM" Grid.Column="1" Grid.Row="2"/>
                         <TextBlock Text="Device Manufacturer: " Grid.Column="0" Grid.Row="3" Height="20" VerticalAlignment="Bottom"/>
-                        <TextBlock Text="Microsoft" Grid.Column="1" Grid.Row="3" />
+                        <TextBlock x:Name="dm" Grid.Column="1" Grid.Row="3" />
                     </Grid>
+                    <TextBlock TextDecorations="Underline" FontWeight="Bold"/>
+                    <TextBlock Text="Battery" TextDecorations="Underline" FontWeight="Bold"/>
+                    <StackPanel x:Name="BatteryReportPanel1" Margin="15,15,0,0"/>
+                    <StackPanel x:Name="BatteryReportPanel2" Margin="15,15,0,0"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
