@@ -9,11 +9,11 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="bgGrid" Grid.ColumnSpan="2"/>
-        <Grid Grid.Column="0">
+        <Grid x:Name="bgGrid" Grid.ColumnSpan="2" />
+        <Grid x:Name="GeneralNav"  Grid.Column="0" Width="260" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -50,6 +50,35 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+        </Grid>
+        <Grid x:Name="MobNav" Width="40"  Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.5" Grid.RowSpan="3"/>
+            <Image Source="Assets/Square44x44Logo.altform-unplated_targetsize-256.png" Height="40" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center"/>
+            <ListView  Grid.Row="1"  x:Name="Mobview" IsItemClickEnabled="True" ItemClick="ItemClick" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Grid.Row="2">
+                <Button Background="Transparent" HorizontalAlignment="Center">
+                    <Button.Content>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE15F;"/>
+                    </Button.Content>
+                </Button>
+
+                <Button Background="Transparent"  HorizontalAlignment="Center">
+                    <Button.Content>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE115;"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
         </Grid>
         <Frame x:Name="frame" Grid.Column="1" >
             <Frame.ContentTransitions>

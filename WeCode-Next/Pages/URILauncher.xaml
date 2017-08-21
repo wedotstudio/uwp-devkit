@@ -35,149 +35,129 @@
     </Page.Resources>
     <Grid>
         <Grid>
-
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid Height="120">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6" Grid.ColumnSpan="3"/>
-                    <TextBlock Text="URI Launcher" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
-                    <Button x:Uid="Btn1" Grid.Column="1" Width="45" Height="45" FontFamily="Segoe MDL2 Assets" Content="&#xE8FD;" Click="D_Action" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                    <Button x:Uid="Btn2" Grid.Column="2" x:Name="HamburgerButton1" Width="45" Height="45" Background="Transparent" Click="HamburgerButton_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                        <Button.Content>
-                            <Image Source="/Assets/h.png"/>
-                        </Button.Content>
-                    </Button>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
-                    <StackPanel>
-                        <TextBox x:Uid="URInput" x:Name="inp" PlaceholderText="Input the URI you want to test" Margin="10" Style="{StaticResource InputStyle}"/>
-                        <Button x:Uid="Test" Content="test" Click="Button_Click" Margin="10"/>
-                    </StackPanel>
-                </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Height="120">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6" Grid.ColumnSpan="3"/>
+                <TextBlock Text="URI Launcher" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
             </Grid>
-            <StackPanel x:Name="grid" VerticalAlignment="Bottom" Height="0" Background="Black">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock x:Uid="DUI" Text="Dafault URI Scheme" FontSize="20" Height="30" Margin="5"/>
-                    <Button Grid.Column="1" FontFamily="Segoe MDL2 Assets" Content="&#xE019;" Click="D_Close" Width="45" Height="45" Background="Transparent" HorizontalAlignment="Right"/>
-                </Grid>
-                <Pivot Height="400">
-                    <PivotItem x:Uid="g" Header="General">
-                        <ListView x:Name="gView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="White"/>
-                                        <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="White"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </PivotItem>
-                    <PivotItem x:Uid="s" Header="Windows Settings">
-                        <ListView x:Name="sView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="White"/>
-                                        <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="White"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </PivotItem>
-                    <PivotItem x:Uid="wm"  Header="Windows Map">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock><Hyperlink NavigateUri="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt228341.aspx#bingmaps">
-                                <Run Text="Parameter Reference"/>
-                            </Hyperlink></TextBlock>
-
-                            <ListView x:Name="mView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="White"/>
-                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="White"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Grid>
-
-                    </PivotItem>
-                    <PivotItem x:Uid="ws" Header="Windows Store">
-                        <ListView x:Name="wsView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="White"/>
-                                        <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="White"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </PivotItem>
-                    <PivotItem x:Uid="p" Header="People">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-
-                            <ListView x:Name="pView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="White"/>
-                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="White"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Grid>
-                    </PivotItem>
-                </Pivot>
-            </StackPanel>
-
-        </Grid>
-        <SplitView x:Name="splitView" DisplayMode="Overlay" PanePlacement="Right" IsPaneOpen="False" Opacity="0.7">
-            <SplitView.Pane>
+            <Grid Grid.Row="1">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBlock x:Uid="history" FontStretch="Condensed" Text="History" Margin="10" FontSize="20"/>
-                    <Button x:Name="HamburgerButton" Width="45" Height="45" Background="Transparent" Click="HamburgerButton1_Click" HorizontalAlignment="Right">
-                        <Button.Content>
-                            <Image Source="/Assets/h.png"/>
-                        </Button.Content>
-                    </Button>
-                    <ListView x:Name="listView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView_ItemClick">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Uid="URInput" x:Name="inp" PlaceholderText="Input the URI you want to test" Margin="10" Style="{StaticResource InputStyle}"/>
+                    <Button x:Uid="Test" FontFamily="Segoe MDL2 Assets" Content="&#xE102;" Click="Button_Click"  Grid.Column="1"  Background="Transparent" />
+                    <TextBlock Grid.Row="1" Text="History" FontSize="20" Height="30" Margin="5" />
+                    <TextBlock Grid.Row="2" Text="You have not tested any URI. " x:Name="noneHistoryText" Foreground="DarkGray" Visibility="Collapsed"/>
+                    <ListView x:Name="listView" Grid.Row="2" Height="40"  ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  ScrollViewer.HorizontalScrollMode="Enabled"  ScrollViewer.VerticalScrollMode="Disabled" Grid.ColumnSpan="3" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView_ItemClick">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Background="Transparent" Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Content}" HorizontalAlignment="Center" TextWrapping="Wrap"  Foreground="White"/>
+                                <TextBlock Text="{Binding Content}" HorizontalAlignment="Center" TextDecorations="Underline" TextWrapping="Wrap"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <TextBlock x:Uid="DUI" Grid.Row="3" Text="Dafault URI Scheme" FontSize="20" Height="30" Margin="5" />
+                    <Pivot Grid.Row="4" Grid.ColumnSpan="2">
+                        <PivotItem x:Uid="g" Header="General">
+                            <ListView x:Name="gView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
+                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </PivotItem>
+                        <PivotItem x:Uid="s" Header="Windows Settings">
+                            <ListView x:Name="sView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
+                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </PivotItem>
+                        <PivotItem x:Uid="wm"  Header="Windows Map">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock><Hyperlink NavigateUri="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt228341.aspx#bingmaps">
+                                <Run Text="Parameter Reference"/>
+                            </Hyperlink></TextBlock>
+                                <ListView x:Name="mView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
+                                                <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+
+                        </PivotItem>
+                        <PivotItem x:Uid="ws" Header="Windows Store">
+                            <ListView x:Name="wsView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
+                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </PivotItem>
+                        <PivotItem x:Uid="p" Header="People">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <ListView x:Name="pView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
+                                                <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+                        </PivotItem>
+                    </Pivot>
                 </Grid>
-            </SplitView.Pane>
-        </SplitView>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WeCode_Next.DataModel;
 using WeCode_Next.Pages;
 using Windows.UI;
 using Windows.UI.Composition;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -20,6 +22,20 @@ namespace WeCode_Next
             InitializeList();
 
             Loaded += MainPage_Loaded;
+            Window.Current.SizeChanged += Current_SizeChanged;
+        }
+
+        private void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+        {
+            if (e.Size.Width > 800)
+            {
+                GeneralNav.Visibility = Visibility.Visible;
+                MobNav.Visibility = Visibility.Collapsed;
+            }
+            else {
+                GeneralNav.Visibility = Visibility.Collapsed;
+                MobNav.Visibility = Visibility.Visible;
+            }
         }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -39,6 +55,7 @@ namespace WeCode_Next
                 new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) }
             };
             view.ItemsSource = NavList;
+            Mobview.ItemsSource = NavList;
         }
 
         private void InitializeUI()

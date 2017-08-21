@@ -1,21 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using WeCode_Next.DataModel;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,7 +25,6 @@ namespace WeCode_Next.Pages
         private async void Page2_Loaded(object sender, RoutedEventArgs e)
         {
             UpdateList();
-
             StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Data/uri.csv"));
             using (var storageStream = await file.OpenReadAsync())
             {
@@ -92,9 +82,9 @@ namespace WeCode_Next.Pages
             {
                 if (inp.Text != "")
                 {
-
                     await Windows.System.Launcher.LaunchUriAsync(new Uri(inp.Text));
                     AddToHistory(inp.Text);
+                    UpdateList();
                 }
             }
             catch
@@ -155,9 +145,17 @@ namespace WeCode_Next.Pages
                             var line = reader.ReadLine();
                             Items.Add(new UriHistory { Content = line });
                         }
+                        if (Items.Count == 0)
+                        { listView.Visibility = Visibility.Collapsed;
+                        noneHistoryText.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            listView.Visibility = Visibility.Visible;
+                            noneHistoryText.Visibility = Visibility.Collapsed;
+                        }
                         Items.Reverse();
                         listView.ItemsSource = Items;
-
 
                         reader.Dispose();
                     }
@@ -165,16 +163,6 @@ namespace WeCode_Next.Pages
                 }
                 storageStream.Dispose();
             }
-        }
-
-        private void HamburgerButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            splitView.IsPaneOpen = true;
-            UpdateList();
-        }
-        private void HamburgerButton1_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            splitView.IsPaneOpen = false;
         }
 
         private async void listView_ItemClick(object sender, ItemClickEventArgs e)
@@ -194,27 +182,6 @@ namespace WeCode_Next.Pages
         {
             URI u = e.ClickedItem as URI;
             inp.Text = u.Content;
-        }
-
-
-        private void D_Action(object sender, RoutedEventArgs e)
-        {
-            if (!isopen)
-            {
-                Open.Begin();
-                isopen = true;
-            }
-            else
-            {
-                Close.Begin();
-                isopen = false;
-            }
-        }
-
-        private void D_Close(object sender, RoutedEventArgs e)
-        {
-            Close.Begin();
-            isopen = false;
         }
     }
 }
