@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Linq;
+using WeCode_Next.DataModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +28,32 @@ namespace WeCode_Next.Pages
         public WindowsBlog()
         {
             this.InitializeComponent();
+            NewsLoad(false);
+            NewsLoad(true);
+
+        }
+
+        private async void NewsLoad(bool type)
+        {
+            string uri = (type) ? "https://blogs.windows.com/buildingapps/feed/" : "https://blogs.windows.com/windowsexperience/tag/windows-insider-program/feed/";
+            var client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync(new Uri(uri));
+            XDocument news = XDocument.Load(await response.Content.ReadAsStreamAsync());
+            var data = from item in news.Descendants("item")
+                       select new News
+                       {
+                           Title = (string)item.Element("title"),
+                           PubDate = (string)item.Element("pubDate"),
+                           Link = (string)item.Element("link")
+                       };
+            if (type)
+            {
+                wd.ItemsSource = data;
+            }
+            else
+            {
+                wip.ItemsSource = data;
+            }
         }
     }
 }

@@ -6,7 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <Page.Resources>
+        <DataTemplate x:Key="ItemTemplate">
+            <StackPanel Margin="0,5">
+                <TextBlock Text="{Binding Title}" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" />
+                <TextBlock Text="{Binding PubDate}" HorizontalAlignment="Stretch" FontSize="10" VerticalAlignment="Center" />
+                <HyperlinkButton Content="Read More" VerticalAlignment="Center" NavigateUri="{Binding Link}" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
@@ -20,10 +28,12 @@
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
             <Pivot>
                 <PivotItem Header="Windows Insider Program">
-                    <ListView
+                    <ListView x:Name="wip" ItemTemplate="{StaticResource ItemTemplate}"
+                          IsItemClickEnabled="False" />
                 </PivotItem>
                 <PivotItem Header="Windows Developer">
-
+                    <ListView x:Name="wd" ItemTemplate="{StaticResource ItemTemplate}"
+                          IsItemClickEnabled="False" />
                 </PivotItem>
             </Pivot>
         </Grid>
