@@ -58,7 +58,7 @@ namespace WeCode_Next
                 new Nav { Icon = "", Name = "BuildFeed", PageType = typeof(BuildFeed) },
                 new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) },
                 new Nav { Icon = "", Name = "Json2C#", PageType = typeof(URILauncher) },
-                new Nav { Icon = "", Name = "Color", PageType = typeof(URILauncher) }
+                new Nav { Icon = "", Name = "Color", PageType = typeof(URILauncher) }
             };
             view.ItemsSource = NavList;
             Mobview.ItemsSource = NavList;

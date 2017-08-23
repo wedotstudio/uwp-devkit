@@ -1,4 +1,5 @@
-﻿using Windows.System.Profile;
+﻿using Windows.Security.ExchangeActiveSyncProvisioning;
+using Windows.System.Profile;
 using Windows.UI.ViewManagement;
 
 namespace WeCode_Next.Core
@@ -23,6 +24,28 @@ namespace WeCode_Next.Core
                     return DeviceFormFactorType.Other;
             }
         }
+
+        public static string GetBuild()
+        {
+            var deviceFamilyVersion = AnalyticsInfo.VersionInfo.DeviceFamilyVersion;
+            var version = ulong.Parse(deviceFamilyVersion);
+            var buildVersion = (version & 0x00000000FFFF0000L) >> 16;
+            var systemVersion = $"{buildVersion}";
+            return systemVersion;
+        }
+
+        public static string GetDeviceManufacturer() {
+            var clientDeviceInformation = new EasClientDeviceInformation();
+            return clientDeviceInformation.SystemManufacturer;
+        }
+
+        public static string GetDeviceModel()
+        {
+            var clientDeviceInformation = new EasClientDeviceInformation();
+            return clientDeviceInformation.SystemProductName;
+        }
+
+        
     }
 
     public enum DeviceFormFactorType
