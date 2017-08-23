@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="WeCode_Next.Pages.BuildFeed"
+    x:Class="WeCode_Next.Pages.ColorPalette"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WeCode_Next.Pages"

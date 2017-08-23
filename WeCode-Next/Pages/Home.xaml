@@ -24,7 +24,7 @@
         <Grid Grid.Row="1"  >
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8" Grid.ColumnSpan="2"/>
             <StackPanel>
-                <TextBlock x:Name="Di" FontFamily="Segoe MDL2 Assets" FontSize="80" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="Di" FontFamily="Segoe MDL2 Assets" FontSize="80" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0"/>
                 <TextBlock FontSize="23" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Light">
                         <Run Text="Windows 10 Build"/>
                         <Run x:Name="b"/>

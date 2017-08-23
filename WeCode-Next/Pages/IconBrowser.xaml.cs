@@ -58,6 +58,7 @@ namespace WeCode_Next.Pages
                                     ViewSizePreference.UseMinimum);
                             });
                             */
+            if (iconPanel.Visibility == Visibility.Collapsed) iconPanel.Visibility = Visibility.Visible;
             Character Item = e.ClickedItem as Character;
             string c = Item.Char;
 

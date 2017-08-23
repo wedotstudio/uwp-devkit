@@ -101,20 +101,27 @@
     <Compile Include="DataModel\History.cs" />
     <Compile Include="DataModel\InstalledFont.cs" />
     <Compile Include="DataModel\Main.cs" />
+    <Compile Include="DataModel\News.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AssetsGen.xaml.cs">
       <DependentUpon>AssetsGen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BuildFeed.xaml.cs">
-      <DependentUpon>BuildFeed.xaml</DependentUpon>
+    <Compile Include="Pages\ColorPalette.xaml.cs">
+      <DependentUpon>ColorPalette.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GUIDGen.xaml.cs">
+      <DependentUpon>GUIDGen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\IconBrowser.xaml.cs">
       <DependentUpon>IconBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Json2Csharp.xaml.cs">
+      <DependentUpon>Json2Csharp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegularExpression.xaml.cs">
       <DependentUpon>RegularExpression.xaml</DependentUpon>
@@ -124,6 +131,9 @@
     </Compile>
     <Compile Include="Pages\URILauncher.xaml.cs">
       <DependentUpon>URILauncher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WindowsBlog.xaml.cs">
+      <DependentUpon>WindowsBlog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -208,7 +218,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\BuildFeed.xaml">
+    <Page Include="Pages\ColorPalette.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GUIDGen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,6 +231,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\IconBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Json2Csharp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,6 +247,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\URILauncher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WindowsBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

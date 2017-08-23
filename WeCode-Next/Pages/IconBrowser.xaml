@@ -175,7 +175,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
@@ -211,7 +211,7 @@
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
-        <StackPanel  Grid.Row="2" Grid.Column="1" BorderBrush="Gray" BorderThickness="1,0,0,0" Margin="5" Padding="5">
+        <StackPanel x:Name="iconPanel" Width="200" Grid.Row="2" Grid.Column="1" BorderBrush="Gray" BorderThickness="1,0,0,0" Margin="5" Padding="5" Visibility="Collapsed">
             <TextBlock x:Name="Ficon_i" FontFamily="Segoe MDL2 Assets" FontSize="80" Padding="5" HorizontalAlignment="Center"/>
             <TextBlock x:Name="Ftext" Text="" FontSize="20" Margin="10,10,0,10" HorizontalAlignment="Center"/>
             <TextBlock x:Uid="UT" Text="Unicode Text:  "/>

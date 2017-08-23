@@ -52,13 +52,14 @@ namespace WeCode_Next
             List<Nav> NavList = new List<Nav>
             {
                 new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
+                new Nav { Icon = "", Name = "Windows Blog", PageType = typeof(WindowsBlog) },
                 new Nav { Icon = "", Name = "Icon Browser", PageType = typeof(IconBrowser) },
                 new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
+                new Nav { Icon = "", Name = "GUID Generator", PageType = typeof(GUIDGen) },
                 new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) },
-                new Nav { Icon = "", Name = "BuildFeed", PageType = typeof(BuildFeed) },
                 new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) },
-                new Nav { Icon = "", Name = "Json2C#", PageType = typeof(URILauncher) },
-                new Nav { Icon = "", Name = "Color", PageType = typeof(URILauncher) }
+                new Nav { Icon = "", Name = "Json2C#", PageType = typeof(Json2Csharp) },
+                new Nav { Icon = "", Name = "Color Palette", PageType = typeof(ColorPalette) }
             };
             view.ItemsSource = NavList;
             Mobview.ItemsSource = NavList;

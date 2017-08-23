@@ -83,8 +83,8 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
-                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  />
+                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -95,8 +95,8 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
-                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  />
+                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -115,8 +115,8 @@
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel>
-                                                <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
-                                                <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                                <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  />
+                                                <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  />
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
@@ -129,8 +129,8 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
-                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                            <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  />
+                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -147,8 +147,8 @@
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel>
-                                                <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  Foreground="Black"/>
-                                                <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  Foreground="Black"/>
+                                                <TextBlock Text="{Binding Intro}" FontWeight="Bold" TextWrapping="Wrap"  />
+                                                <TextBlock Text="{Binding Content}" TextWrapping="Wrap"  />
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
