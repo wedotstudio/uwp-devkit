@@ -107,14 +107,17 @@
     <Compile Include="Pages\AssetsGen.xaml.cs">
       <DependentUpon>AssetsGen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BuildFeed.xaml.cs">
+      <DependentUpon>BuildFeed.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\IconBrowser.xaml.cs">
       <DependentUpon>IconBrowser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\IconViewer.xaml.cs">
-      <DependentUpon>IconViewer.xaml</DependentUpon>
+    <Compile Include="Pages\RegularExpression.xaml.cs">
+      <DependentUpon>RegularExpression.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SystemInfo.xaml.cs">
       <DependentUpon>SystemInfo.xaml</DependentUpon>
@@ -205,6 +208,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\BuildFeed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -213,7 +220,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\IconViewer.xaml">
+    <Page Include="Pages\RegularExpression.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

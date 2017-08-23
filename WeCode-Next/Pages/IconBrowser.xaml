@@ -173,17 +173,21 @@
         </Style>
     </Page.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid>
+        <Grid Grid.ColumnSpan="2">
             <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6"/>
             <TextBlock Text="Fonticon Browser" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
         </Grid>
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8" Grid.Row="1" Grid.RowSpan="2"/>
-        <ComboBox Grid.Row="1" x:Name="CmbFontFamily" x:Uid="CmbFontFamily" HorizontalAlignment="Stretch" SelectionChanged="CmbFontFamily_OnSelectionChanged" SelectedValuePath="Name" VerticalAlignment="Center" PlaceholderText="----Choose a Font----" Style="{StaticResource ComboBoxStyle1}">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8" Grid.Row="1" Grid.RowSpan="2"  Grid.ColumnSpan="2"/>
+        <ComboBox Grid.Row="1"  Grid.ColumnSpan="2" x:Name="CmbFontFamily" x:Uid="CmbFontFamily" HorizontalAlignment="Stretch" SelectionChanged="CmbFontFamily_OnSelectionChanged" SelectedValuePath="Name" VerticalAlignment="Center" PlaceholderText="----Choose a Font----" Style="{StaticResource ComboBoxStyle1}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}" />
@@ -207,5 +211,19 @@
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
+        <StackPanel  Grid.Row="2" Grid.Column="1" BorderBrush="Gray" BorderThickness="1,0,0,0" Margin="5" Padding="5">
+            <TextBlock x:Name="Ficon_i" FontFamily="Segoe MDL2 Assets" FontSize="80" Padding="5" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="Ftext" Text="" FontSize="20" Margin="10,10,0,10" HorizontalAlignment="Center"/>
+            <TextBlock x:Uid="UT" Text="Unicode Text:  "/>
+            <TextBox x:Name="Ficon" FontFamily="Segoe MDL2 Assets" IsReadOnly="True"/>
+            <TextBlock x:Uid="FS" Text="Fonticon String:  " />
+            <TextBox  x:Name="FiconT" IsReadOnly="True"/>
+            <TextBlock x:Uid="ES" Text="Escaped String:  " />
+            <TextBox x:Name="Ucode"  IsReadOnly="True"/>
+            <TextBlock x:Uid="FI" Text="Fonticon: " />
+            <TextBox  Grid.Row="3" Grid.Column="2" x:Name="FiconS"  TextWrapping="Wrap" IsReadOnly="True"/>
+            <TextBlock x:Uid="RS" Text="Remarks:  " />
+            <TextBox  x:Name="Rm"  TextWrapping="Wrap" IsReadOnly="True"/>
+        </StackPanel>
     </Grid>
 </Page>

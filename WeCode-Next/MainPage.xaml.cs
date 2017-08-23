@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using WeCode_Next.DataModel;
 using WeCode_Next.Pages;
+using Windows.Graphics.Display;
 using Windows.UI;
 using Windows.UI.Composition;
 using Windows.UI.Core;
@@ -9,7 +9,6 @@ using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Hosting;
-using Windows.UI.Xaml.Navigation;
 
 namespace WeCode_Next
 {
@@ -18,11 +17,14 @@ namespace WeCode_Next
         public MainPage()
         {
             this.InitializeComponent();
+            Window.Current.SizeChanged += Current_SizeChanged;
+
             InitializeUI();
             InitializeList();
 
+
             Loaded += MainPage_Loaded;
-            Window.Current.SizeChanged += Current_SizeChanged;
+
         }
 
         private void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
@@ -32,7 +34,8 @@ namespace WeCode_Next
                 GeneralNav.Visibility = Visibility.Visible;
                 MobNav.Visibility = Visibility.Collapsed;
             }
-            else {
+            else
+            {
                 GeneralNav.Visibility = Visibility.Collapsed;
                 MobNav.Visibility = Visibility.Visible;
             }
@@ -49,22 +52,37 @@ namespace WeCode_Next
             List<Nav> NavList = new List<Nav>
             {
                 new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
-                new Nav { Icon = "", Name = "System Information", PageType = typeof(SystemInfo) },
-                new Nav { Icon = "", Name = "Icon Browser", PageType = typeof(IconBrowser) },
+                new Nav { Icon = "", Name = "Icon Browser", PageType = typeof(IconBrowser) },
                 new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
-                new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) }
+                new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) },
+                new Nav { Icon = "", Name = "BuildFeed", PageType = typeof(BuildFeed) },
+                new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) },
+                new Nav { Icon = "", Name = "Json2C#", PageType = typeof(URILauncher) },
+                new Nav { Icon = "", Name = "Color", PageType = typeof(URILauncher) }
             };
             view.ItemsSource = NavList;
             Mobview.ItemsSource = NavList;
         }
-
         private void InitializeUI()
         {
+            var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
+            var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
+            if (bounds.Width * scaleFactor > 800)
+            {
+                GeneralNav.Visibility = Visibility.Visible;
+                MobNav.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                GeneralNav.Visibility = Visibility.Collapsed;
+                MobNav.Visibility = Visibility.Visible;
+            }
+
             var isDark = Application.Current.RequestedTheme == ApplicationTheme.Dark;
             var applicationView = ApplicationView.GetForCurrentView();
             var titleBar = applicationView.TitleBar;
             titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-            titleBar.ButtonInactiveForegroundColor = (isDark)?Colors.White:Colors.Black;
+            titleBar.ButtonInactiveForegroundColor = (isDark) ? Colors.White : Colors.Black;
             titleBar.ButtonBackgroundColor = Colors.Transparent;
             titleBar.ButtonForegroundColor = (isDark) ? Colors.White : Colors.Black;
             Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
@@ -82,11 +100,6 @@ namespace WeCode_Next
             var bindSizeAnimation = compositor.CreateExpressionAnimation("hostVisual.Size");
             bindSizeAnimation.SetReferenceParameter("hostVisual", hostVisual);
             glassVisual.StartAnimation("Size", bindSizeAnimation);
-        }
-
-        private void OnNavigatingToPage(object sender, NavigatingCancelEventArgs e)
-        {
-
         }
 
         private void ItemClick(object sender, ItemClickEventArgs e)
