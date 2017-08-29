@@ -129,9 +129,6 @@
     <Compile Include="Pages\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SystemInfo.xaml.cs">
-      <DependentUpon>SystemInfo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\URILauncher.xaml.cs">
       <DependentUpon>URILauncher.xaml</DependentUpon>
     </Compile>
@@ -249,10 +246,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\About.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SystemInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
