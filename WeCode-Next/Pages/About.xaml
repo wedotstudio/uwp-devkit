@@ -36,7 +36,7 @@
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
-                    <controls:MarkdownTextBlock x:Name="MarkdownText" Margin="5" LinkForeground="{ThemeResource SystemControlBackgroundAccentBrush}" LinkClicked="MarkdownText_LinkClicked"/>
+                    <controls:MarkdownTextBlock x:Name="MarkdownText" Margin="10" LinkForeground="{ThemeResource SystemControlBackgroundAccentBrush}" LinkClicked="MarkdownText_LinkClicked"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

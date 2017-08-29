@@ -81,6 +81,8 @@ namespace WeCode_Next
 
         private void ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (bottom_view.SelectedIndex >= 0) bottom_view.SelectedIndex = -1;
+            if (view.SelectedIndex >= 0) view.SelectedIndex = -1;
             var items = (Nav)e.ClickedItem;
             frame.Navigate(items.PageType);
         }
