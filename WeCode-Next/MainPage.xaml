@@ -13,72 +13,41 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid x:Name="bgGrid" Grid.ColumnSpan="2" />
-        <Grid x:Name="GeneralNav"  Grid.Column="0" Width="260" Visibility="Collapsed">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.5" Grid.RowSpan="2"/>
-            <Grid Grid.Row="0" Margin="10,10,10,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <Image Source="Assets/Square44x44Logo.altform-unplated_targetsize-256.png" Height="40" Grid.Column="0"/>
-                <TextBlock Text="UWP DevKit" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
-                <Button Grid.Column="2" Height="40" Width="40" Background="Transparent">
-                    <Button.Content>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE15F;"/>
-                    </Button.Content>
-                </Button>
-
-                <Button Grid.Column="3" Height="40" Width="40"  Background="Transparent">
-                    <Button.Content>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE115;"/>
-                    </Button.Content>
-                </Button>
-            </Grid>
-            <ListView  Grid.Row="1"  x:Name="view" IsItemClickEnabled="True" ItemClick="ItemClick" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Padding="5" Orientation="Horizontal">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" Padding="5,10,15,10"/>
-                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-        <Grid x:Name="MobNav" Width="40"  Grid.Column="0" >
+        <Grid x:Name="GeneralNav"  Grid.Column="0" Width="260" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.5" Grid.RowSpan="3"/>
-            <Image Source="Assets/Square44x44Logo.altform-unplated_targetsize-256.png" Height="40" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center"/>
-            <ListView  Grid.Row="1"  x:Name="Mobview" IsItemClickEnabled="True" ItemClick="ItemClick" >
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="Assets/Square44x44Logo.altform-unplated_targetsize-256.png" Height="40" Grid.Column="0"/>
+                <TextBlock Text="UWP DevKit" Grid.Column="1" VerticalAlignment="Center" Margin="10,0"/>
+            </Grid>
+            <ListView  Grid.Row="1"  x:Name="view" IsItemClickEnabled="True" ItemClick="ItemClick" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" Padding="0,0,13,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                        </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackPanel Grid.Row="2">
-                <Button Background="Transparent" HorizontalAlignment="Center">
-                    <Button.Content>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE15F;"/>
-                    </Button.Content>
-                </Button>
-
-                <Button Background="Transparent"  HorizontalAlignment="Center">
-                    <Button.Content>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE115;"/>
-                    </Button.Content>
-                </Button>
-            </StackPanel>
+            <ListView  Grid.Row="2"  x:Name="bottom_view" IsItemClickEnabled="True" ItemClick="ItemClick" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="{Binding Icon}" Padding="0,0,13,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
         <Frame x:Name="frame" Grid.Column="1" >
             <Frame.ContentTransitions>
@@ -91,5 +60,25 @@
                 </TransitionCollection>
             </Frame.ContentTransitions>
         </Frame>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowStates">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="GeneralNav.Width" Value="260"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="GeneralNav.Width" Value="40"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

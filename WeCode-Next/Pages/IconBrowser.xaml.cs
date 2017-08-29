@@ -18,14 +18,9 @@ namespace WeCode_Next.Pages
         public IconBrowser()
         {
             this.InitializeComponent();
-            Loaded += IconBrowser_Loaded;
             InitializeList();
         }
 
-        private void IconBrowser_Loaded(object sender, RoutedEventArgs e)
-        {
-            CmbFontFamily.SelectedIndex = 0;
-        }
         private void InitializeList()
         {
             var fontList = InstalledFont.GetFonts();
@@ -188,6 +183,11 @@ namespace WeCode_Next.Pages
 
         private void CmbFontFamily_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (gridView.Visibility == Visibility.Collapsed)
+            {
+                gridView.Visibility = Visibility.Visible;
+                placeholder.Visibility = Visibility.Collapsed;
+            }
             var font = (sender as ComboBox).SelectedItem as InstalledFont;
             var fontList = InstalledFont.GetFonts();
             var items = font.GetCharacters();

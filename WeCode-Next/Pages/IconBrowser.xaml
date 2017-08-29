@@ -194,7 +194,8 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <GridView x:Name="gridView" Grid.Row="2" SelectionMode="None" IsItemClickEnabled="True" ItemClick="Icon_Click" Margin="5,0,0,0">
+        <TextBlock x:Name="placeholder" Text="Please Select a font to continue." Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}"/>
+        <GridView x:Name="gridView" Grid.Row="2" SelectionMode="None" IsItemClickEnabled="True" ItemClick="Icon_Click" Margin="5,0,0,0" Visibility="Collapsed" >
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel x:Name="a">

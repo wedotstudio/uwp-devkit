@@ -155,7 +155,9 @@
     <Content Include="Assets\Data\uri.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Assets\Data\about.md" />
+    <Content Include="Assets\Data\about.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="WeCode-Next_StoreKey.pfx" />
     <None Include="WeCode-Next_TemporaryKey.pfx" />
   </ItemGroup>

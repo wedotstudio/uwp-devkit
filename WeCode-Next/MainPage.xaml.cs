@@ -17,28 +17,11 @@ namespace WeCode_Next
         public MainPage()
         {
             this.InitializeComponent();
-            Window.Current.SizeChanged += Current_SizeChanged;
 
             InitializeUI();
             InitializeList();
 
-
             Loaded += MainPage_Loaded;
-
-        }
-
-        private void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
-        {
-            if (e.Size.Width > 800)
-            {
-                GeneralNav.Visibility = Visibility.Visible;
-                MobNav.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                GeneralNav.Visibility = Visibility.Collapsed;
-                MobNav.Visibility = Visibility.Visible;
-            }
         }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -56,29 +39,22 @@ namespace WeCode_Next
                 new Nav { Icon = "", Name = "Icon Browser", PageType = typeof(IconBrowser) },
                 new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
                 new Nav { Icon = "", Name = "GUID Generator", PageType = typeof(GUIDGen) },
-                new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) },
-                new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) },
-                new Nav { Icon = "", Name = "Json2C#", PageType = typeof(Json2Csharp) },
-                new Nav { Icon = "", Name = "Color Palette", PageType = typeof(ColorPalette) }
+                new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) }
+                //new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) },
+                //new Nav { Icon = "", Name = "Json2C#", PageType = typeof(Json2Csharp) },
+                //new Nav { Icon = "", Name = "Color Palette", PageType = typeof(ColorPalette) }
             };
             view.ItemsSource = NavList;
-            Mobview.ItemsSource = NavList;
+
+            List<Nav> BottomNavList = new List<Nav>
+            {
+                //new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
+                new Nav { Icon = "", Name = "About", PageType = typeof(About) }
+            };
+           bottom_view.ItemsSource = BottomNavList;
         }
         private void InitializeUI()
         {
-            var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
-            var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-            if (bounds.Width * scaleFactor > 800)
-            {
-                GeneralNav.Visibility = Visibility.Visible;
-                MobNav.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                GeneralNav.Visibility = Visibility.Collapsed;
-                MobNav.Visibility = Visibility.Visible;
-            }
-
             var isDark = Application.Current.RequestedTheme == ApplicationTheme.Dark;
             var applicationView = ApplicationView.GetForCurrentView();
             var titleBar = applicationView.TitleBar;

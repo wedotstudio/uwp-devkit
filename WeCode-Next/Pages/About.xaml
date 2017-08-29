@@ -5,6 +5,7 @@
     xmlns:local="using:WeCode_Next.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
@@ -34,9 +35,8 @@
                                 <HyperlinkButton Content="More Apps From Me" Click="Button_Click_2" Background="Transparent" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}"/>
                             </StackPanel>
                         </StackPanel>
-                        
                     </StackPanel>
-                    
+                    <controls:MarkdownTextBlock x:Name="MarkdownText" Margin="5" LinkForeground="{ThemeResource SystemControlBackgroundAccentBrush}" LinkClicked="MarkdownText_LinkClicked"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
