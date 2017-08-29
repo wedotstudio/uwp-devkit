@@ -26,5 +26,10 @@ namespace WeCode_Next.Pages
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
