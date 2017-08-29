@@ -6,33 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Page.Resources>
-        <ResourceDictionary>
-            <Storyboard x:Name="Open">
-                <DoubleAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="grid">
-                    <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
-                    <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="445"/>
-                </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="grid">
-                    <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
-                    <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
-                </DoubleAnimationUsingKeyFrames>
-
-            </Storyboard>
-            <Storyboard x:Name="Close">
-                <DoubleAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="grid">
-                    <SplineDoubleKeyFrame KeyTime="0" Value="445"/>
-                    <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
-                </DoubleAnimationUsingKeyFrames>
-                <DoubleAnimationUsingKeyFrames EnableDependentAnimation="True" Storyboard.TargetProperty="(FrameworkElement.Opacity)" Storyboard.TargetName="grid">
-                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
-                    <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
-                </DoubleAnimationUsingKeyFrames>
-
-            </Storyboard>
-        </ResourceDictionary>
-    </Page.Resources>
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
