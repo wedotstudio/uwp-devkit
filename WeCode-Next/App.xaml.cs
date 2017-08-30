@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,6 +29,18 @@ namespace WeCode_Next
         /// </summary>
         public App()
         {
+            ApplicationDataContainer _appSettings = ApplicationData.Current.LocalSettings;
+            if (_appSettings.Values.ContainsKey("Themes"))
+            {
+                if (Convert.ToInt32(_appSettings.Values["Themes"]) == 1)
+                {
+                    RequestedTheme = ApplicationTheme.Light;
+                }
+                if (Convert.ToInt32(_appSettings.Values["Themes"]) == 2)
+                {
+                    RequestedTheme = ApplicationTheme.Dark;
+                }
+            }
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }

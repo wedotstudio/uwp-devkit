@@ -39,8 +39,8 @@ namespace WeCode_Next
                 new Nav { Icon = "", Name = "Icon Browser", PageType = typeof(IconBrowser) },
                 new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
                 new Nav { Icon = "", Name = "GUID Generator", PageType = typeof(GUIDGen) },
-                new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) }
-                //new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) },
+                new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) },
+                new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) }
                 //new Nav { Icon = "", Name = "Json2C#", PageType = typeof(Json2Csharp) },
                 //new Nav { Icon = "", Name = "Color Palette", PageType = typeof(ColorPalette) }
             };
@@ -48,7 +48,7 @@ namespace WeCode_Next
 
             List<Nav> BottomNavList = new List<Nav>
             {
-                //new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
+                new Nav { Icon = "", Name = "Settings", PageType = typeof(Settings) },
                 new Nav { Icon = "", Name = "About", PageType = typeof(About) }
             };
            bottom_view.ItemsSource = BottomNavList;

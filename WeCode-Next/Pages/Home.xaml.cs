@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.NetworkInformation;
-using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
 using WeCode_Next.Core;
+using Windows.Storage;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Markup;
 
 namespace WeCode_Next.Pages
 {
@@ -45,30 +43,59 @@ namespace WeCode_Next.Pages
             Dmo.Text = DeviceInfoHelper.GetDeviceModel();
             Dma.Text = DeviceInfoHelper.GetDeviceManufacturer();
             b.Text = DeviceInfoHelper.GetBuild();
-            if (NetworkInterface.GetIsNetworkAvailable())
+
+            ApplicationDataContainer _appSettings = ApplicationData.Current.LocalSettings;
+            if (_appSettings.Values.ContainsKey("OfflineMode"))
             {
-                in_t.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                in_pd.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                in_l.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                in_NC.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                dn_t.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                dn_pd.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                dn_l.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                dn_NC.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                NewsLoad(true);
-                NewsLoad(false);
+                if (Convert.ToBoolean(_appSettings.Values["OfflineMode"]))
+                {
+                    in_t.Visibility = in_pd.Visibility = in_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    in_NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
+                    dn_t.Visibility = dn_pd.Visibility = dn_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    dn_NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    in_NC.Text = dn_NC.Text = "Currently in Offline Mode. ";
+                }
+                else
+                {
+                    if (NetworkInterface.GetIsNetworkAvailable())
+                    {
+                        in_t.Visibility = in_pd.Visibility = in_l.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                        in_NC.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        dn_t.Visibility = dn_pd.Visibility = dn_l.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                        dn_NC.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        NewsLoad(true);
+                        NewsLoad(false);
+                    }
+                    else
+                    {
+                        in_t.Visibility = in_pd.Visibility = in_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        in_NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
+                        dn_t.Visibility = dn_pd.Visibility = dn_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        dn_NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    }
+                }
             }
             else
             {
-                in_t.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                in_pd.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                in_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                in_NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                if (NetworkInterface.GetIsNetworkAvailable())
+                {
+                    in_t.Visibility = in_pd.Visibility = in_l.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    in_NC.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    dn_t.Visibility = dn_pd.Visibility = dn_l.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    dn_NC.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    NewsLoad(true);
+                    NewsLoad(false);
+                }
+                else
+                {
+                    in_t.Visibility = in_pd.Visibility = in_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    in_NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
 
-                dn_t.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                dn_pd.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                dn_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                dn_NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    dn_t.Visibility = dn_pd.Visibility = dn_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    dn_NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                }
             }
         }
 
