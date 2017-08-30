@@ -28,31 +28,6 @@ namespace WeCode_Next.Pages
         }
         private async void Icon_Click(object sender, ItemClickEventArgs e)
         {
-            /*Character output = e.ClickedItem as Character;
-            //AddToHistory(output);
-            var currentAV = ApplicationView.GetForCurrentView();
-            var newAV = CoreApplication.CreateNewView();
-            await newAV.Dispatcher.RunAsync(
-                            CoreDispatcherPriority.Normal,
-                            async () =>
-                            {
-                                var newWindow = Window.Current;
-                                var newAppView = ApplicationView.GetForCurrentView();
-
-                                newAppView.Title = "Details";
-
-                                var frame = new Frame();
-                                frame.Navigate(typeof(IconViewer), output);
-                                newWindow.Content = frame;
-                                newWindow.Activate();
-
-                                await ApplicationViewSwitcher.TryShowAsStandaloneAsync(
-                                    newAppView.Id,
-                                    ViewSizePreference.UseMinimum,
-                                    currentAV.Id,
-                                    ViewSizePreference.UseMinimum);
-                            });
-                            */
             if (iconPanel.Visibility == Visibility.Collapsed) iconPanel.Visibility = Visibility.Visible;
             Character Item = e.ClickedItem as Character;
             string c = Item.Char;
@@ -192,32 +167,6 @@ namespace WeCode_Next.Pages
             var fontList = InstalledFont.GetFonts();
             var items = font.GetCharacters();
             gridView.ItemsSource = items;
-        }
-
-        private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            Copy(Ficon.Text);
-        }
-
-        private void Button_Click_1(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            Copy(FiconT.Text);
-        }
-
-        private void Button_Click_2(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            Copy(Ucode.Text);
-        }
-        public void Copy(String a)
-        {
-            var dataPackage = new DataPackage();
-            dataPackage.SetText(a);
-            Clipboard.SetContent(dataPackage);
-        }
-
-        private void Button_Click_3(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            Copy(FiconS.Text);
         }
     }
 }
