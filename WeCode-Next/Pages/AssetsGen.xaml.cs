@@ -106,25 +106,27 @@ namespace WeCode_Next.Pages
                         {
                             await Generator.Resizer("Square44x44Logo.targetsize-256.png", 256, 256, StoredFile1, newFolder);
                             await Generator.Resizer("Square44x44Logo.targetsize-48.png", 48, 48, StoredFile1, newFolder);
+                            await Generator.Resizer("Square44x44Logo.targetsize-32.png", 32, 32, StoredFile1, newFolder);
                             await Generator.Resizer("Square44x44Logo.targetsize-24.png", 24, 24, StoredFile1, newFolder);
                             await Generator.Resizer("Square44x44Logo.targetsize-16.png", 16, 16, StoredFile1, newFolder);
 
                         }
                         if (s44uTL.IsChecked == true)
                         {
-await Generator.Resizer("Square44x44Logo.targetsize-256_altform-unplated.png", 256, 256, StoredFile1, newFolder);
-                            await Generator.Resizer("Square44x44Logo.targetsize-48_altform-unplated.png", 48, 48, StoredFile1, newFolder);
-                            await Generator.Resizer("Square44x44Logo.targetsize-24_altform-unplated.png", 24, 24, StoredFile1, newFolder);
-                            await Generator.Resizer("Square44x44Logo.targetsize-16_altform-unplated.png", 16, 16, StoredFile1, newFolder);
+                            await Generator.Resizer("Square44x44Logo.altform-unplated_targetsize-256.png", 256, 256, StoredFile1, newFolder);
+                            await Generator.Resizer("Square44x44Logo.altform-unplated_targetsize-48.png", 48, 48, StoredFile1, newFolder);
+                            await Generator.Resizer("Square44x44Logo.altform-unplated_targetsize-32.png", 32, 32, StoredFile1, newFolder);
+                            await Generator.Resizer("Square44x44Logo.altform-unplated_targetsize-24.png", 24, 24, StoredFile1, newFolder);
+                            await Generator.Resizer("Square44x44Logo.altform-unplated_targetsize-16.png", 16, 16, StoredFile1, newFolder);
                         }
                     }
                     if (s71L.IsChecked == true)
                     {
-                        await Generator.Resizer("Square71x71Logo.scale-400.png", 284, 284, StoredFile1, newFolder);
-                        await Generator.Resizer("Square71x71Logo.scale-200.png", 142, 142, StoredFile1, newFolder);
-                        await Generator.Resizer("Square71x71Logo.scale-150.png", 107, 107, StoredFile1, newFolder);
-                        await Generator.Resizer("Square71x71Logo.scale-125.png", 89, 89, StoredFile1, newFolder);
-                        await Generator.Resizer("Square71x71Logo.scale-100.png", 71, 71, StoredFile1, newFolder);
+                        await Generator.Resizer("SmallTile.scale-400.png", 284, 284, StoredFile1, newFolder);
+                        await Generator.Resizer("SmallTile.scale-200.png", 142, 142, StoredFile1, newFolder);
+                        await Generator.Resizer("SmallTile.scale-150.png", 107, 107, StoredFile1, newFolder);
+                        await Generator.Resizer("SmallTile.scale-125.png", 89, 89, StoredFile1, newFolder);
+                        await Generator.Resizer("SmallTile.scale-100.png", 71, 71, StoredFile1, newFolder);
                     }
                     if (mL.IsChecked == true)
                     {
@@ -144,14 +146,15 @@ await Generator.Resizer("Square44x44Logo.targetsize-256_altform-unplated.png", 2
                     }
                     if (lL.IsChecked == true)
                     {
-                        await Generator.Resizer("Square310x310Logo.scale-400.png", 1240, 1240, StoredFile1, newFolder);
-                        await Generator.Resizer("Square310x310Logo.scale-200.png", 620, 620, StoredFile1, newFolder);
-                        await Generator.Resizer("Square310x310Logo.scale-150.png", 465, 465, StoredFile1, newFolder);
-                        await Generator.Resizer("Square310x310Logo.scale-125.png", 388, 388, StoredFile1, newFolder);
-                        await Generator.Resizer("Square310x310Logo.scale-100.png", 310, 310, StoredFile1, newFolder);
+                        await Generator.Resizer("LargeTile.scale-400.png", 1240, 1240, StoredFile1, newFolder);
+                        await Generator.Resizer("LargeTile.scale-200.png", 620, 620, StoredFile1, newFolder);
+                        await Generator.Resizer("LargeTile.scale-150.png", 465, 465, StoredFile1, newFolder);
+                        await Generator.Resizer("LargeTile.scale-125.png", 388, 388, StoredFile1, newFolder);
+                        await Generator.Resizer("LargeTile.scale-100.png", 310, 310, StoredFile1, newFolder);
                     }
                     if (sL.IsChecked == true)
                     {
+                        await Generator.Resizer("StoreLogo.scale-400.png", 200, 200, StoredFile1, newFolder);
                         await Generator.Resizer("StoreLogo.scale-200.png", 100, 100, StoredFile1, newFolder);
                         await Generator.Resizer("StoreLogo.scale-150.png", 75, 75, StoredFile1, newFolder);
                         await Generator.Resizer("StoreLogo.scale-125.png", 63, 63, StoredFile1, newFolder);
@@ -205,10 +208,6 @@ await Generator.Resizer("Square44x44Logo.targetsize-256_altform-unplated.png", 2
             s44uTL.IsEnabled = false;
             s44TL.IsChecked = false;
             s44uTL.IsChecked = false;
-        }
-        private void updatecheckbox()
-        {
-
         }
 
         private void Grid_DragOver_s(object sender, DragEventArgs e)

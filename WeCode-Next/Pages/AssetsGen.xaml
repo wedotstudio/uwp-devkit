@@ -19,17 +19,13 @@
         <ScrollViewer Grid.Row="1">
             <Grid>
                 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
-                <StackPanel>
-                    <TextBlock  Margin="5" TextWrapping="Wrap">
+                <StackPanel >
+                    <TextBlock  Margin="10" TextWrapping="Wrap">
                     <Run x:Uid="Note" Text="Note:"/>
                     <LineBreak/>
                     <Run x:Uid="Note1" Text="  • Suggested size for square icon: 1240x1240"/>
                     <LineBreak/>
                     <Run x:Uid="Note2" Text="  • Suggested size for wide icon: 1200x2480"/>
-                    <LineBreak/>
-                    <Run x:Uid="Note3-1" Text="  • This is just a simple assets generator. If you want more features, I recommand you to use "/>
-                    <Hyperlink NavigateUri="ms-windows-store://pdp/?ProductId=9wzdncrfj6pq"><Run x:Uid="Note3-2" Text="Vector"/></Hyperlink>
-                    <Run x:Uid="Note3-3" Text=" to generate icons."/>
                     </TextBlock>
                     <StackPanel Orientation="Horizontal" >
                         <Button x:Uid="InpSq" Content="Import square icon(.png)" Margin="5" Click="Button_Click"/>
@@ -45,14 +41,14 @@
                         </Border>
                     </StackPanel>
                     <StackPanel Margin="5">
-                        <CheckBox x:Uid="s44L" x:Name="s44L" Content="Small 44x44 Logo" IsChecked="True"/>
-                        <CheckBox x:Uid="s44TL" x:Name="s44TL" Content="Target Logo" IsChecked="True" IsEnabled="True" Margin="20,0" />
-                        <CheckBox x:Uid="s44uTL" x:Name="s44uTL" Content="Unplated Target Logo" IsChecked="True" IsEnabled="True" Margin="20,0"/>
-                        <CheckBox x:Uid="s71L" x:Name="s71L" Content="Small 71x71 Logo" IsChecked="True"/>
-                        <CheckBox x:Uid="mL" x:Name="mL" Content="Medium Logo" IsChecked="True"/>
-                        <CheckBox x:Uid="wL" x:Name="wL" Content="Wide Logo" IsChecked="True"/>
-                        <CheckBox x:Uid="lL" x:Name="lL" Content="Large Logo" IsChecked="True"/>
-                        <CheckBox x:Uid="sL" x:Name="sL" Content="Store Logo" IsChecked="True"/>
+                        <CheckBox x:Uid="s44L" x:Name="s44L" Content="App Icon" IsChecked="True"/>
+                        <CheckBox x:Uid="s44TL" x:Name="s44TL" Content="App Icon in Windows Shell" IsChecked="True" IsEnabled="True" Margin="20,0" />
+                        <CheckBox x:Uid="s44uTL" x:Name="s44uTL" Content="Unplated App Icon in Windows Shell" IsChecked="True" IsEnabled="True" Margin="20,0"/>
+                        <CheckBox x:Uid="s71L" x:Name="s71L" Content="Small Tile" IsChecked="True"/>
+                        <CheckBox x:Uid="mL" x:Name="mL" Content="Medium Tile" IsChecked="True"/>
+                        <CheckBox x:Uid="wL" x:Name="wL" Content="Wide Tile" IsChecked="True"/>
+                        <CheckBox x:Uid="lL" x:Name="lL" Content="Large Tile" IsChecked="True"/>
+                        <CheckBox x:Uid="sL" x:Name="sL" Content="Package Logo" IsChecked="True"/>
                         <CheckBox x:Uid="bL" x:Name="bL" Content="Badge Logo" IsChecked="True"/>
                         <CheckBox x:Uid="sS" x:Name="sS" Content="Splash Screen" IsChecked="True"/>
                     </StackPanel>
