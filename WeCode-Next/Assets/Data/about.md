@@ -18,6 +18,10 @@ Note: Some features will be coming in future release.
 
    [GitHub](https://github.com/Microsoft/UWPCommunityToolkit) | [Website](http://www.uwpcommunitytoolkit.com/)
 
+- **Visual Studio Mobile Center SDK** by *Microsoft*
+
+   [GitHub](https://github.com/Microsoft/mobile-center-sdk-dotnet) | [Website](https://www.visualstudio.com/vs/mobile-center/) | [License(MIT)](https://github.com/Microsoft/mobile-center-sdk-dotnet/blob/master/license.txt)
+
 - **SharpDX.Direct2D1** by *Alexandre Mutel*
 
    [GitHub](https://github.com/sharpdx/SharpDX) | [Website](http://sharpdx.org/) | [License(MIT)](https://github.com/sharpdx/SharpDX/blob/master/License.txt)

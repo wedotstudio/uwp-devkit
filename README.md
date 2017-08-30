@@ -19,6 +19,7 @@ Note: Some features will be coming in future release.
 # Libraries
 
 - **UWP Community Toolkit** by *Microsoft*
+- **Visual Studio Mobile Center SDK** by *Microsoft*
 - **SharpDX.Direct2D1** by *Alexandre Mutel*
 
 # Feedback & Contribute
