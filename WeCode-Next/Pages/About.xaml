@@ -21,8 +21,8 @@
             <ScrollViewer>
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Border Background="Gray" Opacity="0.6" Height="80" Width="80" HorizontalAlignment="Left" Margin="10">
-                            <Image Source="../Assets/StoreLogo.scale-400.png"/>
+                        <Border Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6" Height="80" Width="80" HorizontalAlignment="Left" Margin="10">
+                            <Image Source="../Assets/LargeTile.scale-400.png" Height="80" Width="80"/>
                         </Border>
                         <StackPanel Margin="5">
                             <TextBlock FontSize="20">
