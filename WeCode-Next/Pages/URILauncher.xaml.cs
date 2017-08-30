@@ -84,7 +84,6 @@ namespace WeCode_Next.Pages
                 {
                     await Windows.System.Launcher.LaunchUriAsync(new Uri(inp.Text));
                     AddToHistory(inp.Text);
-                    UpdateList();
                 }
             }
             catch
@@ -131,18 +130,18 @@ namespace WeCode_Next.Pages
         private async void UpdateList()
         {
             StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
-            StorageFile storageFile = await storageFolder.CreateFileAsync("history.log", CreationCollisionOption.OpenIfExists);
-            using (var storageStream = await storageFile.OpenReadAsync())
+            StorageFile ustorageFile = await storageFolder.CreateFileAsync("history.log", CreationCollisionOption.OpenIfExists);
+            using (var ustorageStream = await ustorageFile.OpenReadAsync())
             {
-                using (Stream stream = storageStream.AsStreamForRead())
+                using (Stream ustream = ustorageStream.AsStreamForRead())
                 {
-                    using (StreamReader reader = new StreamReader(stream))
+                    using (StreamReader ureader = new StreamReader(ustream))
                     {
                         List<UriHistory> Items = new List<UriHistory>();
 
-                        while (!reader.EndOfStream)
+                        while (!ureader.EndOfStream)
                         {
-                            var line = reader.ReadLine();
+                            var line = ureader.ReadLine();
                             Items.Add(new UriHistory { Content = line });
                         }
                         if (Items.Count == 0)
@@ -157,11 +156,11 @@ namespace WeCode_Next.Pages
                         Items.Reverse();
                         listView.ItemsSource = Items;
 
-                        reader.Dispose();
+                        ureader.Dispose();
                     }
-                    stream.Dispose();
+                    ustream.Dispose();
                 }
-                storageStream.Dispose();
+                ustorageStream.Dispose();
             }
         }
 
@@ -182,6 +181,11 @@ namespace WeCode_Next.Pages
         {
             URI u = e.ClickedItem as URI;
             inp.Text = u.Content;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            UpdateList();
         }
     }
 }
