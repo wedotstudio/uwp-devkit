@@ -1,25 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using System.Diagnostics;
+using WeCode_Next.DataModel;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace WeCode_Next.Pages
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class GUIDGen : Page
     {
         public GUIDGen()
@@ -29,7 +17,41 @@ namespace WeCode_Next.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            List<GUID> outputlist = new List<GUID> { };
+            int a = Convert.ToInt32(((ComboBoxItem)stuff.SelectedItem).Content.ToString());
+            for (int b = 0; b < a; b++)
+            {
+                string tmp = Guid.NewGuid().ToString();
+                if (up.IsChecked == true) tmp = tmp.ToUpper();
+                if (w.IsChecked == true) tmp = "{" + tmp + "}";
+                outputlist.Add(new GUID { ID = tmp });
+            }
 
+            output.ItemsSource = outputlist;
+
+        }
+
+        private void output_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            GUID id = e.ClickedItem as GUID;
+            DataPackage dataPackage = new DataPackage();
+            dataPackage.SetText(id.ID);
+            Clipboard.SetContent(dataPackage);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string tmp = "";
+            if (output.Items.Count > 0)
+            {
+                foreach (GUID item in output.Items)
+                {
+                    tmp += item.ID + "\r";
+                }
+                DataPackage dataPackage = new DataPackage();
+                dataPackage.SetText(tmp);
+                Clipboard.SetContent(dataPackage);
+            }
         }
     }
 }

@@ -26,4 +26,8 @@ namespace WeCode_Next.DataModel
         public string Name { get; set; }
         public Type PageType { get; set; }
     }
+    public class GUID
+    {
+        public string ID { get; set; }
+    }
 }

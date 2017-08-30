@@ -26,7 +26,7 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                         <TextBlock Text="Amount" Margin="10,0" VerticalAlignment="Center" />
                         <ComboBox x:Name="stuff" SelectedIndex="0" >
-                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="1" />
                             <ComboBoxItem Content="5"/>
                             <ComboBoxItem Content="10"/>
                         </ComboBox>
@@ -34,7 +34,14 @@
                         <CheckBox x:Name="w" Content="{}{} Braces" Margin="10,0,0,0"/>
                         <Button x:Uid="Test" FontFamily="Segoe MDL2 Assets" Content="&#xE102;" Click="Button_Click"  Grid.Column="1"  Background="Transparent" />
                     </StackPanel>
-                    <ListView x:Name="output" Height="300" Width="300"/>
+                    <ListView x:Name="output" Height="300" Width="400" ItemClick="output_ItemClick">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ID}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button Content="Copy All" HorizontalAlignment="Center" Background="Transparent" Click="Button_Click_1" />
                 </StackPanel>
             </Grid>
         </Grid>
