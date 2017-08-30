@@ -269,6 +269,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Mobile.Analytics">
+      <Version>0.14.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Azure.Mobile.Push">
+      <Version>0.14.2</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.4.0</Version>
     </PackageReference>
