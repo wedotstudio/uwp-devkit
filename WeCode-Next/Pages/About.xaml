@@ -25,11 +25,13 @@
                             <Image Source="../Assets/LargeTile.scale-400.png" Height="80" Width="80"/>
                         </Border>
                         <StackPanel Margin="5">
-                            <TextBlock FontSize="20">
-                            <Run  x:Uid="AppN" Text="UWP DevKit 5.0" FontWeight="Light" FontSize="25"/>
-                            <LineBreak/>
-                            <Run Text="WE. Studio" FontWeight="Light"/>
-                            </TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock  x:Uid="AppN" Text="UWP DevKit 5.1 " FontWeight="Light" FontSize="25"/>
+                                <Border BorderBrush="Orange" BorderThickness="1" CornerRadius="5" Margin="5,0">
+                                <TextBlock Text="Insider" Foreground="DarkOrange" FontWeight="Light" FontSize="25" Margin="5,0" VerticalAlignment="Center"/>
+                                </Border>
+                            </StackPanel>
+                            <TextBlock FontSize="20" Text="WE. Studio" FontWeight="Light"/>
                             <StackPanel Orientation="Horizontal">
                                 <HyperlinkButton Content="Rate &#x0026; Review" Click="Button_Click_1" Margin="0,0,5,0" Background="Transparent" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}"/>
                                 <HyperlinkButton Content="More Apps From Me" Click="Button_Click_2" Background="Transparent" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}"/>
