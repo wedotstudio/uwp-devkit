@@ -22,7 +22,7 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Border Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6" Height="80" Width="80" HorizontalAlignment="Left" Margin="10">
-                            <Image Source="../Assets/LargeTile.scale-400.png" Height="80" Width="80"/>
+                            <Image Source="/Assets/app.png" Height="80" Width="80"/>
                         </Border>
                         <StackPanel Margin="5">
                             <StackPanel Orientation="Horizontal">

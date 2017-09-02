@@ -35,7 +35,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBox x:Uid="URInput" x:Name="inp" PlaceholderText="Input the URI you want to test" Margin="10" Style="{StaticResource InputStyle}"/>
                     <Button x:Uid="Test" FontFamily="Segoe MDL2 Assets" Content="&#xE102;" Click="Button_Click"  Grid.Column="1"  Background="Transparent" />
-                    <StackPanel Grid.Row="1" Orientation="Horizontal" Height="30" Margin="5">
+                    <StackPanel x:Name="Histitle" Grid.Row="1" Orientation="Horizontal" Height="30" Margin="5">
                         <TextBlock  Text="History" FontSize="20" Height="30" />
                         <Button FontFamily="Segoe MDL2 Assets" Content="" Click="Button_Click_1"  Grid.Column="1"  Background="Transparent" />
                     </StackPanel>
@@ -53,7 +53,7 @@
                         </ListView.ItemTemplate>
                     </ListView>
                     <TextBlock x:Uid="DUI" Grid.Row="3" Text="Dafault URI Scheme" FontSize="20" Height="30" Margin="5" />
-                    <Pivot Grid.Row="4" Grid.ColumnSpan="2">
+                    <Pivot x:Name="DP" Grid.Row="4" Grid.ColumnSpan="2">
                         <PivotItem x:Uid="g" Header="General">
                             <ListView x:Name="gView" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True" ItemClick="listView1_ItemClick">
                                 <ListView.ItemTemplate>
