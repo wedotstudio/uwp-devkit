@@ -36,6 +36,7 @@
         </Grid>
         <Grid Grid.Row="1">
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
+            <TextBlock x:Name="NC"  Text="Please connect to the Internet in order to use the feature." Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed"/>
             <ListView x:Name="bf" ItemTemplate="{StaticResource ItemTemplate}" IsItemClickEnabled="False" />
         </Grid>
     </Grid>

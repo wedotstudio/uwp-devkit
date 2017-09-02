@@ -8,6 +8,7 @@ A simple but complete developer toolkit for UWP developers. It provides users wi
 - URI Tester
 - Assets Generator
 - Windows Blog
+- BuildFeed
 - GUID Generator
 - Regular Expression Tester
 - Json2C#
@@ -17,12 +18,6 @@ A simple but complete developer toolkit for UWP developers. It provides users wi
 Note: Some features will be coming in future release.
 
 <a href="https://www.microsoft.com/store/apps/9nblggh5p90f?ocid=badge"><img height="65" width="180" src="https://assets.windowsphone.com/f2f77ec7-9ba9-4850-9ebe-77e366d08adc/English_Get_it_Win_10_InvariantCulture_Default.png" alt="Get it on Windows 10" /></a>
-
-# Libraries
-
-- **UWP Community Toolkit** by *Microsoft*
-- **Visual Studio Mobile Center SDK** by *Microsoft*
-- **SharpDX.Direct2D1** by *Alexandre Mutel*
 
 # Feedback & Contribute
 

@@ -4,11 +4,13 @@
 
 ## Libraries
 
-[Microsoft.Toolkit.Uwp.UI.Controls](https://github.com/Microsoft/UWPCommunityToolkit) Copyright (c), .NET Foundation and Contributors - [License](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/license.md)
+[Microsoft.Toolkit.Uwp](https://github.com/Microsoft/UWPCommunityToolkit) Copyright (c) 2017, .NET Foundation and Contributors - [License](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/license.md)
 
-[Microsoft.Azure.Mobile](https://github.com/Microsoft/mobile-center-sdk-dotnet) Copyright (c), Microsoft - [License](https://github.com/Microsoft/mobile-center-sdk-dotnet/blob/master/license.txt)
+[Microsoft.Azure.Mobile](https://github.com/Microsoft/mobile-center-sdk-dotnet) Copyright (c) 2017, Microsoft - [License](https://github.com/Microsoft/mobile-center-sdk-dotnet/blob/master/license.txt)
 
-[SharpDX.Direct2D1](https://github.com/sharpdx/SharpDX) Copyright (c), Alexandre Mutel - [License](https://github.com/sharpdx/SharpDX/blob/master/License.txt)
+[SharpDX.Direct2D1](https://github.com/sharpdx/SharpDX) Copyright (c) 2010-2014, Alexandre Mutel - [License](https://github.com/sharpdx/SharpDX/blob/master/License.txt)
+
+[Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json/) Copyright (c) 2007-2017, James Newton-King - [License](https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/LICENSE.md)
 
 ## License
 ```
