@@ -36,6 +36,7 @@ namespace WeCode_Next
             {
                 new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
                 new Nav { Icon = "", Name = "Windows Blog", PageType = typeof(WindowsBlog) },
+                new Nav { Icon = "", Name = "BuildFeed", PageType = typeof(BuildFeed) },
                 new Nav { Icon = "", Name = "Icon Browser", PageType = typeof(IconBrowser) },
                 new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
                 new Nav { Icon = "", Name = "GUID Generator", PageType = typeof(GUIDGen) },

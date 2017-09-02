@@ -63,7 +63,7 @@ namespace WeCode_Next.Pages
             HttpResponseMessage response = await client.GetAsync(new Uri(uri));
             XDocument news = XDocument.Load(await response.Content.ReadAsStreamAsync());
             var data = from item in news.Descendants("item")
-                       select new News
+                       select new APIs
                        {
                            Title = (string)item.Element("title"),
                            PubDate = (string)item.Element("pubDate"),

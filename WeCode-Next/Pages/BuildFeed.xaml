@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="WeCode_Next.Pages.BuildFeed"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeCode_Next.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="ItemTemplate">
+            <StackPanel Margin="0,5">
+                <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="30" >
+                    <Run Text="{Binding Number}"/><Run Text="."/><Run Text="{Binding Revision}"/>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Stretch" FontSize="15" VerticalAlignment="Center" >
+                    <Run Text="{Binding SourceType}" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}"/>
+                    <Run Text="@"/>
+                    <Run Text="{Binding BuildTime}"/>
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Stretch" FontSize="10" VerticalAlignment="Center">
+                    <Run Text="Branch:"/>
+                    <Run  Text="{Binding LabUrl}"/>
+                </TextBlock>
+                <TextBlock Text="{Binding FullBuildString}" HorizontalAlignment="Stretch" FontSize="10" VerticalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6"/>
+            <TextBlock Text="BuildFeed" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
+            <ListView x:Name="bf" ItemTemplate="{StaticResource ItemTemplate}" IsItemClickEnabled="False" />
+        </Grid>
+    </Grid>
+</Page>
