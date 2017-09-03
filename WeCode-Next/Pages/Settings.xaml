@@ -27,13 +27,22 @@
                         <ComboBoxItem Content="Dark"/>
                     </ComboBox>
                     <ToggleSwitch x:Name="offline_m" Header="Offline Mode" Toggled="offline_m_Toggled"/>
+                    <ToggleSwitch x:Name="push_n" Header="Push Notifications" Toggled="push_n_Toggled"/>
                     <TextBlock Text="*:Restart App Required"/>
                     <TextBlock Text="URI Launcher" Style="{StaticResource TitleTextBlockStyle}" Margin="0,10" />
                     <TextBlock>
                         <Run Text="Current History Cache:"/>
                         <Run x:Name="history_content"/>
                     </TextBlock>
-                    <Button Content="Clear History Cache" Click="Button_Click" Margin="0,5"/>
+                    <HyperlinkButton Content="Clear History Cache" Click="Button_Click" Margin="0,5" />
+                    <TextBlock Text="Danger Zone" Style="{StaticResource TitleTextBlockStyle}" Margin="0,10" Foreground="#f44336" />
+                    <HyperlinkButton Content="RESET" Click="HyperlinkButton_Click"  Foreground="#ffa000" >
+                        <HyperlinkButton.ContentTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </HyperlinkButton.ContentTemplate>
+                    </HyperlinkButton>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

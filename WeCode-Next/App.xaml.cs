@@ -8,6 +8,7 @@ using Windows.UI.Xaml.Navigation;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Push;
+using Windows.System;
 
 namespace WeCode_Next
 {
@@ -47,7 +48,11 @@ namespace WeCode_Next
         {
             MobileCenter.Start("8a037210-cba3-45da-826c-06d9812822fb", typeof(Analytics), typeof(Push));
             Push.CheckLaunchedFromNotification(e);
-
+            ApplicationDataContainer _appSettings = ApplicationData.Current.LocalSettings;
+            if (_appSettings.Values.ContainsKey("IsPushEnabled"))
+            {
+                Push.SetEnabledAsync(Convert.ToBoolean(_appSettings.Values["IsPushEnabled"]));
+            }
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
