@@ -8,7 +8,12 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="ItemTemplate">
-            <StackPanel Margin="0,5">
+            <Grid Margin="0,5" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+            <StackPanel>
                 <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="30" >
                     <Run Text="{Binding Number}"/><Run Text="."/><Run Text="{Binding Revision}"/>
                 </TextBlock>
@@ -23,6 +28,15 @@
                 </TextBlock>
                 <TextBlock Text="{Binding FullBuildString}" HorizontalAlignment="Stretch" FontSize="10" VerticalAlignment="Center" />
             </StackPanel>
+                <Button Background="Transparent" Click="Share_Click" Grid.Column="1">
+                    <Button.Content>
+                        <StackPanel>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Share" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </Grid>
         </DataTemplate>
     </Page.Resources>
     <Grid>
@@ -37,7 +51,13 @@
         <Grid Grid.Row="1">
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
             <TextBlock x:Name="NC"  Text="Please connect to the Internet in order to use the feature." Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed"/>
-            <ListView x:Name="bf" ItemTemplate="{StaticResource ItemTemplate}" IsItemClickEnabled="False" />
+            <ListView x:Name="bf" ItemTemplate="{StaticResource ItemTemplate}" IsItemClickEnabled="False" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment"  Value="Stretch"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
         </Grid>
     </Grid>
 </Page>
