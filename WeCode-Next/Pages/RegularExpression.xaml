@@ -18,6 +18,16 @@
         </Grid>
         <Grid Grid.Row="1"  >
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="re" PlaceholderText="Input the Regular Expression" TextChanged="re_TextChanged" Style="{StaticResource InputStyle}" Margin="10"/>
+                <RichEditBox x:Name="tb" Grid.Row="2" Header="Text" BorderThickness="0,2,0,0" Background="Transparent" Style="{StaticResource RegExrOutputStyle}" >
+                 </RichEditBox>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
