@@ -10,10 +10,9 @@ A simple but complete developer toolkit for UWP developers. It provides users wi
 - Windows Blog
 - BuildFeed
 - GUID Generator
-- Regular Expression Tester
+- Regular Expression Helper
 - Json2C#
 - Color Palette
-- Regex Helper
 
 Note: Some features will be coming in future release.
 
@@ -32,5 +31,3 @@ Want to get the latest build without waiting for slow store certification? here 
 # License
 
  You may use, distribute and copy **UWP DevKit** under the terms of **GNU General Public License version 3** as shown in [LICENSE](https://raw.githubusercontent.com/patrick330602/UWP-DevKit/master/LICENSE).
-
- > Keep in remind that all projects using or referencing code from **UWP DevKit** should be open sourced and use with the same license.
