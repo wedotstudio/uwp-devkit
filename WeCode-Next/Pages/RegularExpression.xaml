@@ -24,8 +24,30 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBox x:Name="re" PlaceholderText="Input the Regular Expression" TextChanged="re_TextChanged" Style="{StaticResource InputStyle}" Margin="10"/>
-                <RichEditBox x:Name="tb" Grid.Row="2" Header="Text" BorderThickness="0,2,0,0" Background="Transparent" Style="{StaticResource RegExrOutputStyle}" >
+                <Grid Margin="0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="re" PlaceholderText="Input regular expressions here" TextChanged="re_TextChanged" Style="{StaticResource InputStyle}"/>
+                    <Button FontFamily="Segoe MDL2 Assets" Grid.Column="1"  Content="" Background="Transparent"/>
+                </Grid>
+                <RichEditBox x:Name="tb" Grid.Row="2" TextChanged="tb_TextChanged" BorderThickness="0,2,0,0" Background="Transparent" Style="{StaticResource RegExrOutputStyle}" >
+                    <RichEditBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Text" FontWeight="Light" FontSize="20"/>
+                            <Border Grid.Column="1" CornerRadius="5" Background="{ThemeResource SystemControlBackgroundAccentBrush}" Padding="10,0">
+                                <TextBlock VerticalAlignment="Center">
+                                    <Run x:Name="matches" Text="0"/>
+                                    <Run Text=" matche(s)."/>
+                                </TextBlock>
+                            </Border>
+                        </Grid>
+                    </RichEditBox.Header>
                  </RichEditBox>
             </Grid>
         </Grid>
