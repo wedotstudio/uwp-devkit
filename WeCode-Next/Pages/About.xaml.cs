@@ -1,6 +1,4 @@
-﻿using Microsoft.Azure.Mobile;
-using System;
-using Windows.ApplicationModel;
+﻿using System;
 using Windows.Storage;
 using Windows.System;
 using Windows.UI.Xaml;
@@ -21,12 +19,6 @@ namespace WeCode_Next.Pages
         {
             StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Data/about.md"));
             MarkdownText.Text = await FileIO.ReadTextAsync(file);
-
-            Package package = Package.Current;
-            PackageId packageId = package.Id;
-            var packageid = packageId.ProductId;
-            var packagereid = packageId.ResourceId;
-
         }
 
         private async void Button_Click_1(object sender, RoutedEventArgs e)
