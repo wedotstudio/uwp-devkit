@@ -2,6 +2,8 @@
 
 UWP DevKit is licensed under GNU General Public License, Version 3.
 
+Copyleft (c) 2016-2017, WE. Studio by Patrick Wu
+
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
@@ -14,9 +16,9 @@ You should have received a copy of the GNU General Public License along with thi
 
 ## Libraries
 
-[Microsoft.Toolkit.Uwp](https://github.com/Microsoft/UWPCommunityToolkit) Copyright (c) 2017, .NET Foundation and Contributors - [MIT License](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/license.md)
+[Microsoft Store Engagement SDK](https://docs.microsoft.com/en-us/windows/uwp/monetize/microsoft-store-services-sdk) Copyright (c) 2015-2017, Microsoft - [Microsoft Terms of Use](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx)
 
-[Microsoft.Azure.Mobile](https://github.com/Microsoft/mobile-center-sdk-dotnet) Copyright (c) 2017, Microsoft - [MIT License](https://github.com/Microsoft/mobile-center-sdk-dotnet/blob/master/license.txt)
+[Microsoft Community Toolkit](https://github.com/Microsoft/UWPCommunityToolkit) Copyright (c) 2017, .NET Foundation and Contributors - [MIT License](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/license.md)
 
 [SharpDX.Direct2D1](https://github.com/sharpdx/SharpDX) Copyright (c) 2010-2014, Alexandre Mutel - [MIT License](https://github.com/sharpdx/SharpDX/blob/master/License.txt)
 
