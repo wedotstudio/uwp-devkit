@@ -1,24 +1,11 @@
-﻿using Microsoft.Azure.Mobile.Push;
+﻿using Microsoft.Services.Store.Engagement;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
 using WeCode_Next.Core;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace WeCode_Next.Pages
 {
@@ -111,9 +98,10 @@ namespace WeCode_Next.Pages
             history_content.Text = "0 KB";
         }
 
-        private void push_n_Toggled(object sender, RoutedEventArgs e)
+        private async void push_n_Toggled(object sender, RoutedEventArgs e)
         {
             _appSettings.Values["IsPushEnabled"] = push_n.IsOn;
+            StoreServicesEngagementManager engagementManager = StoreServicesEngagementManager.GetDefault();
             if (Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) await engagementManager.UnregisterNotificationChannelAsync();
         }
 
