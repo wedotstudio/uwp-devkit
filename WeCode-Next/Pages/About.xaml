@@ -40,13 +40,6 @@
                         </StackPanel>
                     </StackPanel>
                     <controls:MarkdownTextBlock x:Name="MarkdownText" Margin="10" LinkForeground="{ThemeResource SystemControlBackgroundAccentBrush}" LinkClicked="MarkdownText_LinkClicked"/>
-                    <TextBlock Margin="10">
-                        <Run Text="App Info" FontSize="20"/>
-                        <LineBreak/>
-                        <LineBreak/>
-                        <Run Text="User UID: "/>
-                        <Run x:Name="UUID"/>
-                    </TextBlock>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

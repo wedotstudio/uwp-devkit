@@ -114,7 +114,7 @@ namespace WeCode_Next.Pages
         private void push_n_Toggled(object sender, RoutedEventArgs e)
         {
             _appSettings.Values["IsPushEnabled"] = push_n.IsOn;
-            Push.SetEnabledAsync(Convert.ToBoolean(_appSettings.Values["IsPushEnabled"]));
+            if (Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) await engagementManager.UnregisterNotificationChannelAsync();
         }
 
         private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)

@@ -5,10 +5,7 @@ using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
-using Microsoft.Azure.Mobile.Push;
-using Windows.System;
+using Microsoft.Services.Store.Engagement;
 
 namespace WeCode_Next
 {
@@ -44,14 +41,14 @@ namespace WeCode_Next
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            MobileCenter.Start("8a037210-cba3-45da-826c-06d9812822fb", typeof(Analytics), typeof(Push));
-            Push.CheckLaunchedFromNotification(e);
+            StoreServicesEngagementManager engagementManager = StoreServicesEngagementManager.GetDefault();
+            await engagementManager.RegisterNotificationChannelAsync();
             ApplicationDataContainer _appSettings = ApplicationData.Current.LocalSettings;
             if (_appSettings.Values.ContainsKey("IsPushEnabled"))
             {
-                Push.SetEnabledAsync(Convert.ToBoolean(_appSettings.Values["IsPushEnabled"]));
+                if (Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) await engagementManager.UnregisterNotificationChannelAsync();
             }
             Frame rootFrame = Window.Current.Content as Frame;
 
