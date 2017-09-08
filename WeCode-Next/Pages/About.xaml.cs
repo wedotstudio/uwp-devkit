@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Azure.Mobile;
+using System;
 using Windows.Storage;
 using Windows.System;
 using Windows.UI.Xaml;
@@ -19,6 +20,8 @@ namespace WeCode_Next.Pages
         {
             StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Data/about.md"));
             MarkdownText.Text = await FileIO.ReadTextAsync(file);
+            var installId = await MobileCenter.GetInstallIdAsync();
+            UUID.Text = installId.Value.ToString();
         }
 
         private async void Button_Click_1(object sender, RoutedEventArgs e)

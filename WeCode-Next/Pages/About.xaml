@@ -28,7 +28,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock  x:Uid="AppN" Text="UWP DevKit 5.3 " FontWeight="Light" FontSize="25"/>
                                 <Border BorderBrush="Orange" BorderThickness="1" CornerRadius="5" Margin="5,0">
-                                <TextBlock Text="Insider" Foreground="DarkOrange" FontWeight="Light" FontSize="25" Margin="5,0" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Insider" Foreground="DarkOrange" FontWeight="Light" FontSize="25" Margin="5,0" VerticalAlignment="Center"/>
                                 </Border>
                             </StackPanel>
                             <TextBlock FontSize="15" Text="WE. Studio" FontWeight="Light"/>
@@ -40,6 +40,13 @@
                         </StackPanel>
                     </StackPanel>
                     <controls:MarkdownTextBlock x:Name="MarkdownText" Margin="10" LinkForeground="{ThemeResource SystemControlBackgroundAccentBrush}" LinkClicked="MarkdownText_LinkClicked"/>
+                    <TextBlock Margin="10">
+                        <Run Text="App Info" FontSize="20"/>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="User UID: "/>
+                        <Run x:Name="UUID"/>
+                    </TextBlock>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
