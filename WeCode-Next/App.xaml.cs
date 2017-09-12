@@ -48,7 +48,7 @@ namespace WeCode_Next
             ApplicationDataContainer _appSettings = ApplicationData.Current.LocalSettings;
             if (_appSettings.Values.ContainsKey("IsPushEnabled"))
             {
-                if (Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) await engagementManager.UnregisterNotificationChannelAsync();
+                if (!Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) await engagementManager.UnregisterNotificationChannelAsync();
             }
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -83,7 +83,10 @@ namespace WeCode_Next
                 Window.Current.Activate();
             }
         }
-
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            base.OnActivated(args);
+        }
         /// <summary>
         /// Invoked when Navigation to a certain page fails
         /// </summary>
