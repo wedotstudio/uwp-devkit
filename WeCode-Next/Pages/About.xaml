@@ -27,7 +27,7 @@
                         <StackPanel Margin="5">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock  x:Uid="AppN" Text="UWP DevKit 5.3 " FontWeight="Light" FontSize="25"/>
-                                <Border BorderBrush="Orange" BorderThickness="1" CornerRadius="5" Margin="5,0">
+                                <Border BorderBrush="Orange" BorderThickness="1" CornerRadius="5" Margin="5,0" Visibility="Collapsed">
                                     <TextBlock Text="Insider" Foreground="DarkOrange" FontWeight="Light" FontSize="25" Margin="5,0" VerticalAlignment="Center"/>
                                 </Border>
                             </StackPanel>
