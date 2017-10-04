@@ -23,3 +23,15 @@ You should have received a copy of the GNU General Public License along with thi
 [SharpDX.Direct2D1](https://github.com/sharpdx/SharpDX) Copyright (c) 2010-2014, Alexandre Mutel - [MIT License](https://github.com/sharpdx/SharpDX/blob/master/License.txt)
 
 [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json/) Copyright (c) 2007-2017, James Newton-King - [MIT License](https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/LICENSE.md)
+
+## App Information
+
+AppPackageName: 56367PatrickWu.DeveloperToolsForUWP
+
+AppPackageFamilyName: 56367PatrickWu.DeveloperToolsForUWP_jygj8m38vmabg
+
+Version: 5.3.0.1003
+
+
+
+
