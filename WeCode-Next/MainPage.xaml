@@ -6,20 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="bgGrid" Grid.ColumnSpan="2" />
-        <Grid x:Name="GeneralNav"  Grid.Column="0" Width="260" >
+        <!--<Grid x:Name="bgGrid" Grid.ColumnSpan="2" />-->
+        <Grid x:Name="GeneralNav"  Grid.Column="0" Width="260"  Background="{ThemeResource SystemControlAcrylicMediumWindowBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.5" Grid.RowSpan="3"/>
+            <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.5" Grid.RowSpan="3"/>-->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>

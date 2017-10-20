@@ -65,7 +65,7 @@ namespace WeCode_Next
             titleBar.ButtonForegroundColor = (isDark) ? Colors.White : Colors.Black;
             Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
 
-            InitializeFrostedGlass(bgGrid);
+            //InitializeFrostedGlass(bgGrid);
         }
         private void InitializeFrostedGlass(UIElement glassHost)
         {
