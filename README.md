@@ -24,9 +24,11 @@ If you want to leave a feedback, please email me at wotingwu@live.com or [create
 
 # Insider Program
 
-Want to get the latest build without waiting for slow store certification? here is your choice! [Fill in this form](https://1drv.ms/xs/s!AgTyeVJpt1xauIB3_4_SBD-C5pbyjw?wdFormId=%7B396DDF85%2D5D62%2D4E68%2DA293%2DA6FBBDF26942%7D) and then you can participate in the UWP DevKit Insider Program, which will get update a lot earlier than other people.
+<del>Want to get the latest build without waiting for slow store certification? here is your choice! Fill in this form and then you can participate in the UWP DevKit Insider Program, which will get update a lot earlier than other people.</del>
 
-> 中国用户如果打不开的话请翻墙或[填写这份表单](https://www.wjx.top/jq/16263081.aspx)，墙真心烦(╯‵□′)╯︵┻━┻
+<del>中国用户如果打不开的话请翻墙或填写这份表单，墙真心烦(╯‵□′)╯︵┻━┻</del>
+
+Insider Program is temporarily stopped until the completion of PRESS.
 
 # License
 
