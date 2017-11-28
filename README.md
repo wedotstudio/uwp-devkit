@@ -1,5 +1,7 @@
-# UWP DevKit
 <img src="icon.png" align="right">
+
+# UWP DevKit
+
 [![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/patrick330602/UWP-DevKit/master/LICENSE) ![GitHub (pre-)release](https://img.shields.io/github/release/patrick330602/UWP-DevKit/all.svg?style=flat-square)
 
 A simple but complete developer toolkit for UWP developers. It provides users with following functionality:
