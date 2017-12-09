@@ -5,7 +5,7 @@ using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Services.Store.Engagement;
+using System.Diagnostics;
 
 namespace WeCode_Next
 {
@@ -43,12 +43,10 @@ namespace WeCode_Next
         /// <param name="e">Details about the launch request and process.</param>
         protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            StoreServicesEngagementManager engagementManager = StoreServicesEngagementManager.GetDefault();
-            await engagementManager.RegisterNotificationChannelAsync();
             ApplicationDataContainer _appSettings = ApplicationData.Current.LocalSettings;
             if (_appSettings.Values.ContainsKey("IsPushEnabled"))
             {
-                if (!Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) await engagementManager.UnregisterNotificationChannelAsync();
+                if (!Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) Debug.WriteLine("Wat");
             }
             Frame rootFrame = Window.Current.Content as Frame;
 
