@@ -1,5 +1,5 @@
-﻿using Microsoft.Services.Store.Engagement;
-using System;
+﻿using System;
+using System.Diagnostics;
 using WeCode_Next.Core;
 using Windows.Storage;
 using Windows.UI.Popups;
@@ -101,8 +101,7 @@ namespace WeCode_Next.Pages
         private async void push_n_Toggled(object sender, RoutedEventArgs e)
         {
             _appSettings.Values["IsPushEnabled"] = push_n.IsOn;
-            StoreServicesEngagementManager engagementManager = StoreServicesEngagementManager.GetDefault();
-            if (Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) await engagementManager.UnregisterNotificationChannelAsync();
+            if (Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) Debug.WriteLine("WAT");
         }
 
         private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)
