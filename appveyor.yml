@@ -3,3 +3,18 @@ image:
 environment:
   matrix:
     -  msbuild: C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\msbuild.exe
+version: 5.5.{build}
+pull_requests:
+  do_not_increment_build_number: true
+configuration: Debug
+platform:
+- x86
+- x64
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+before_build:
+- cmd: nuget restore
