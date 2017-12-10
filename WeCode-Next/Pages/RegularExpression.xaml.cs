@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Windows.UI;
 using Windows.UI.Text;
@@ -61,6 +62,7 @@ namespace WeCode_Next.Pages
             {
                 matchesBG.Background = new SolidColorBrush(Color.FromArgb(255,244,67,54));
                 matchesText.Text = "ERROR";
+                Debug.WriteLine("[ERROR] RE:" + ex);
             }
         }
 

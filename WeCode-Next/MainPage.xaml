@@ -12,7 +12,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <!--<Grid x:Name="bgGrid" Grid.ColumnSpan="2" />-->
-        <Grid x:Name="GeneralNav"  Grid.Column="0" Width="260"  Background="{ThemeResource SystemControlAcrylicMediumWindowBrush}">
+        <Grid x:Name="GeneralNav"  Grid.Column="0" Width="260"  Background="{ThemeResource SystemControlAcrylicWindowBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
