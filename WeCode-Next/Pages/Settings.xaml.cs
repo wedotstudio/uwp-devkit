@@ -47,11 +47,12 @@ namespace WeCode_Next.Pages
             //URI History
             if (await Base.IsFilePresent("history.log"))
             {
-                Windows.Storage.FileProperties.BasicProperties basicProperties = await ( await ApplicationData.Current.LocalFolder.GetFileAsync("history.log")).GetBasicPropertiesAsync();
+                Windows.Storage.FileProperties.BasicProperties basicProperties = await (await ApplicationData.Current.LocalFolder.GetFileAsync("history.log")).GetBasicPropertiesAsync();
                 string fileSize = string.Format("{0:##0.###}", basicProperties.Size * 0.001);
                 history_content.Text = fileSize + " KB";
             }
-            else {
+            else
+            {
                 history_content.Text = "0 KB";
             }
 
@@ -108,7 +109,6 @@ namespace WeCode_Next.Pages
         {
             var messageDialog = new MessageDialog("You are about to reset the settings. Are you sure you want to proceed?");
 
-            // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
             messageDialog.Commands.Add(new UICommand(
                 "I am Sure",
                 new UICommandInvokedHandler(this.CommandInvokedHandler)));
@@ -116,18 +116,13 @@ namespace WeCode_Next.Pages
                 "Cancel",
                 new UICommandInvokedHandler(this.CommandInvokedHandler)));
 
-            // Set the command that will be invoked by default
             messageDialog.DefaultCommandIndex = 0;
-
-            // Set the command to be invoked when escape is pressed
             messageDialog.CancelCommandIndex = 1;
 
-            // Show the message dialog
             await messageDialog.ShowAsync();
         }
         private async void CommandInvokedHandler(IUICommand command)
         {
-            // Display message showing the label of the command that was invoked
             if (command.Label == "I am Sure")
             {
                 _appSettings.Values.Remove("IsPushEnabled");
@@ -135,7 +130,7 @@ namespace WeCode_Next.Pages
                 _appSettings.Values.Remove("OfflineMode");
                 if (await Base.IsFilePresent("history.log"))
                 {
-                    await(await ApplicationData.Current.LocalFolder.GetFileAsync("history.log")).DeleteAsync();
+                    await (await ApplicationData.Current.LocalFolder.GetFileAsync("history.log")).DeleteAsync();
                 }
                 history_content.Text = "0 KB";
                 var messageDialog = new MessageDialog("Reset Complete. Restart app to take effect.");
