@@ -21,9 +21,154 @@
         </Grid>
         <Grid Grid.Row="1"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <RelativePanel>
-                <ColorPicker  Name="Main_Picker" Margin="15" RelativePanel.AlignLeftWithPanel="True"/>
-                <TextBlock Name="HSB_name" Text="HSB" Foreground="White" Margin="15" RelativePanel.RightOf="Main_Picker"/>
+                <ColorPicker Name="Main_Picker" Margin="15" ColorSpectrumShape="Ring" IsColorChannelTextInputVisible="False" RelativePanel.AlignLeftWithPanel="True"/>
+                <StackPanel Name="HSB_block"  Margin="15" RelativePanel.RightOf="RGB_block">
+                    <TextBlock Name="HSB_name" Text="HSB" FontSize="20%"/>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="hsb_hue" Width="100" />
+                        <TextBlock Text="Hue" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="hsb_sat" Width="100" />
+                        <TextBlock Text="Saturation" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="hsb_v" Width="100" />
+                        <TextBlock Text="Value" Margin="10,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Name="RGB_block"  Margin="15" RelativePanel.RightOf="Main_Picker">
+                    <TextBlock Name="RGB_name" Text="RGB" FontSize="20%"/>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="rgb_r" Width="100" />
+                        <TextBlock Text="Red" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="rgb_g" Width="100" />
+                        <TextBlock Text="Green" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="rgb_b" Width="100" />
+                        <TextBlock Text="Blue" Margin="10,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Name="HSL_block"  Margin="15" RelativePanel.RightOf="HSB_block">
+                    <TextBlock Name="HSL_name" Text="HSL" FontSize="20%"/>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="hsl_hue" Width="100" />
+                        <TextBlock Text="Hue" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="hsl_sat" Width="100" />
+                        <TextBlock Text="Saturation" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="hsl_light" Width="100" />
+                        <TextBlock Text="Lightness" Margin="10,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Name="CMYK_block"  Margin="15" RelativePanel.RightOf="HSL_block">
+                    <TextBlock Name="CMYK_name" Text="CMYK" FontSize="20%"/>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="cmyk_c" Width="100" />
+                        <TextBlock Text="Cyan" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="cmyk_m" Width="100" />
+                        <TextBlock Text="Magenta" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="cymk_y" Width="100" />
+                        <TextBlock Text="Yellow" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="cymk_k" Width="100" />
+                        <TextBlock Text="Black" Margin="10,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Name="YUV_block"  Margin="15" RelativePanel.Below="RGB_block" RelativePanel.RightOf="Main_Picker">
+                    <TextBlock Name="YUV_name" Text="YUV" FontSize="20%"/>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="yuv_y" Width="100" />
+                        <TextBlock Text="Brightness" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="yuv_u" Width="100" />
+                        <TextBlock Text="Red Luma" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="yuv_v" Width="100" />
+                        <TextBlock Text="Blue Luma" Margin="10,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Name="xyz_block"  Margin="15" RelativePanel.RightOf="YUV_block" RelativePanel.Below="HSB_block">
+                    <TextBlock Name="xyz_name" Text="CIE 1931 XYZ   " FontSize="20%"/>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="xyz_x" Width="100" />
+                        <TextBlock Text="X(Red)" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="xyz_y" Width="100" />
+                        <TextBlock Text="Y(Green)" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="xyz_z" Width="100" />
+                        <TextBlock Text="Z(Blue)" Margin="10,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Name="lab_block"  Margin="15" RelativePanel.RightOf="xyz_block" RelativePanel.Below="HSL_block">
+                    <TextBlock Name="lab_name" Text="CIE 1976 Lab" FontSize="20%"/>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="lab_l" Width="100" />
+                        <TextBlock Text="Luminance" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="lab_a" Width="100" />
+                        <TextBlock Text="Red/Green" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel  Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBox Name="lab_b" Width="100" />
+                        <TextBlock Text="Yellow/Blue" Margin="10,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="WindowStates">
+                        <VisualState x:Name="ThreeColumnState">
+                            <VisualState.StateTriggers>
+                                <AdaptiveTrigger MinWindowWidth="1200" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Target="GeneralNav.Width" Value="260"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="TwoColumnState">
+                            <VisualState.StateTriggers>
+                                <AdaptiveTrigger MinWindowWidth="1000" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Target="GeneralNav.Width" Value="260"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="OneColumnState">
+                            <VisualState.StateTriggers>
+                                <AdaptiveTrigger MinWindowWidth="600" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Target="GeneralNav.Width" Value="260"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="NarrowState">
+                            <VisualState.StateTriggers>
+                                <AdaptiveTrigger MinWindowWidth="0" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Target="GeneralNav.Width" Value="40"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
             </RelativePanel>
+            
             
         </Grid>
     </Grid>
