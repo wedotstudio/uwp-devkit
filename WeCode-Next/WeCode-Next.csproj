@@ -99,9 +99,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\RGBConverters.cs" />
     <Compile Include="Core\Base.cs" />
     <Compile Include="Core\DeviceInformationHelper.cs" />
     <Compile Include="Core\Generator.cs" />
+    <Compile Include="DataModel\ColorViewModel.cs" />
     <Compile Include="DataModel\History.cs" />
     <Compile Include="DataModel\InstalledFont.cs" />
     <Compile Include="DataModel\Main.cs" />
