@@ -182,11 +182,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.ColumnSpan="2">
-            <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6"/>
+        <Grid Grid.ColumnSpan="2"  Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
             <TextBlock Text="Fonticon Browser" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
         </Grid>
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8" Grid.Row="1" Grid.RowSpan="2"  Grid.ColumnSpan="2"/>
+        <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}" Grid.Row="1" Grid.RowSpan="2"  Grid.ColumnSpan="2"/>
         <ComboBox Grid.Row="1"  Grid.ColumnSpan="2" x:Name="CmbFontFamily" x:Uid="CmbFontFamily" HorizontalAlignment="Stretch" SelectionChanged="CmbFontFamily_OnSelectionChanged" SelectedValuePath="Name" VerticalAlignment="Center" PlaceholderText="----Choose a Font----" Style="{StaticResource ComboBoxStyle1}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
