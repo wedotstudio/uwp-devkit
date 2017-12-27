@@ -41,9 +41,9 @@ namespace WeCode_Next
                 new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
                 new Nav { Icon = "", Name = "GUID Generator", PageType = typeof(GUIDGen) },
                 new Nav { Icon = "", Name = "Assets Generator", PageType = typeof(AssetsGen) },
-                new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) }
-                //new Nav { Icon = "", Name = "Json2C#", PageType = typeof(Json2Csharp) },
-                //new Nav { Icon = "", Name = "Color Palette", PageType = typeof(ColorPalette) }
+                new Nav { Icon = "", Name = "Regular Expression", PageType = typeof(RegularExpression) },
+                new Nav { Icon = "", Name = "Json2C#", PageType = typeof(Json2Csharp) },
+                new Nav { Icon = "", Name = "Color Palette", PageType = typeof(ColorPalette) }
             };
             view.ItemsSource = NavList;
 
