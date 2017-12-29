@@ -13,21 +13,21 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-            <StackPanel>
-                <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="30" >
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="30" >
                     <Run Text="{Binding Number}"/><Run Text="."/><Run Text="{Binding Revision}"/>
-                </TextBlock>
-                <TextBlock HorizontalAlignment="Stretch" FontSize="15" VerticalAlignment="Center" >
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" FontSize="15" VerticalAlignment="Center" >
                     <Run Text="{Binding SourceType}" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}"/>
                     <Run Text="@"/>
                     <Run Text="{Binding BuildTime}"/>
-                </TextBlock>
-                <TextBlock HorizontalAlignment="Stretch" FontSize="10" VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Stretch" FontSize="10" VerticalAlignment="Center">
                     <Run Text="Branch:"/>
                     <Run  Text="{Binding LabUrl}"/>
-                </TextBlock>
-                <TextBlock Text="{Binding FullBuildString}" HorizontalAlignment="Stretch" FontSize="10" VerticalAlignment="Center" />
-            </StackPanel>
+                    </TextBlock>
+                    <TextBlock Text="{Binding FullBuildString}" HorizontalAlignment="Stretch" FontSize="10" VerticalAlignment="Center" />
+                </StackPanel>
                 <Button Background="Transparent" Click="Share_Click" Grid.Column="1">
                     <Button.Content>
                         <StackPanel>
@@ -45,19 +45,18 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6"/>
-            <TextBlock Text="BuildFeed" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
+            <Grid Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
+                <TextBlock Text="BuildFeed" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Grid Grid.Row="1"  Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+                <TextBlock x:Name="NC"  Text="Please connect to the Internet in order to use the feature." Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed"/>
+                <ListView x:Name="bf" ItemTemplate="{StaticResource ItemTemplate}" IsItemClickEnabled="False" >
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment"  Value="Stretch"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Grid>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
-            <TextBlock x:Name="NC"  Text="Please connect to the Internet in order to use the feature." Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed"/>
-            <ListView x:Name="bf" ItemTemplate="{StaticResource ItemTemplate}" IsItemClickEnabled="False" >
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment"  Value="Stretch"></Setter>
-                    </Style>
-                </ListView.ItemContainerStyle>
-            </ListView>
-        </Grid>
-    </Grid>
 </Page>
