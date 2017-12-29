@@ -126,7 +126,16 @@ namespace WeCode_Next.Pages
             }
             catch (Exception e)
             {
-
+                if (type)
+                {
+                    dn_t.Text = "There is a problem when trying to load content.";
+                    dn_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
+                else
+                {
+                    in_t.Text = "There is a problem when trying to load content.";
+                    in_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
             }
         }
     }

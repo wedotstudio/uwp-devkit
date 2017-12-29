@@ -26,7 +26,14 @@
         </Grid>
         <Grid Grid.Row="1"  >
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
-            <TextBlock x:Name="NC"  Text="Please connect to the Internet in order to use the feature." Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed"/>
+            <TextBlock x:Name="NC"  Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed">
+                <Run Text="There is a problem when trying to load content. Here are several things you can try: "/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="     · Try again later."/>
+                <LineBreak/>
+                <Run Text="     · Check your network connection." />
+            </TextBlock>
             <Pivot x:Name="main">
                 <PivotItem Header="Windows Insider Program">
                     <ListView x:Name="wip" ItemTemplate="{StaticResource ItemTemplate}"

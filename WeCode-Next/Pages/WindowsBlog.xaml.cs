@@ -82,6 +82,8 @@ namespace WeCode_Next.Pages
             }
             catch (Exception e)
             {
+                NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                main.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
         }
     }

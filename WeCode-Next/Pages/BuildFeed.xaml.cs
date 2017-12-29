@@ -80,6 +80,8 @@ namespace WeCode_Next.Pages
             }
             catch (Exception e)
             {
+                NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                bf.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
         }
 
