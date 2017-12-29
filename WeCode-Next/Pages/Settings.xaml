@@ -13,12 +13,11 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6"/>
+            <Grid  Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
             <TextBlock Text="Settings" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
-            <ScrollViewer>
+            <Grid Grid.Row="1"   Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+                <ScrollViewer>
                 <StackPanel Margin="10">
                     <TextBlock Text="General" Style="{StaticResource TitleTextBlockStyle}" Margin="0,10" />
                     <ComboBox x:Name="theme_s" Margin="0,10" Width="100" SelectionChanged="theme_s_SelectionChanged" Header="Theme*" >
