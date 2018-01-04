@@ -44,9 +44,8 @@
             <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
-                <TextBlock Text="BuildFeed" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
+        <Grid Grid.Row="0" Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
+            <TextBlock Text="BuildFeed" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
             </Grid>
             <Grid Grid.Row="1"  Background="{ThemeResource SystemControlAcrylicWindowBrush}">
                 <TextBlock x:Name="NC"  Text="Please connect to the Internet in order to use the feature." Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed"/>
