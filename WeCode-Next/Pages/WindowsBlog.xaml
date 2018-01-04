@@ -27,7 +27,7 @@
         <Grid Grid.Row="1"  >
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
             <TextBlock x:Name="NC"  Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed">
-                <Run Text="There is a problem when trying to load content. Here are several things you can try: "/>
+                <Run Text="We have trouble connecting to the server. Here are several things you can try: "/>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="     · Try again later."/>
