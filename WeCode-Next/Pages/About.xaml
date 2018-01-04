@@ -12,13 +12,11 @@
             <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6"/>
+        <Grid Grid.Row="0"  Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
             <TextBlock Text="About" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Opacity="0.8"/>
-            <ScrollViewer>
+            <Grid Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+           <ScrollViewer>
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Border Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6" Height="80" Width="80" HorizontalAlignment="Left" Margin="10">
