@@ -69,13 +69,20 @@ namespace WeCode_Next.Pages
         }
         private async void NewsLoad()
         {
-            //string uri = "https://buildfeed.net/api/GetBuildsByLab?lab=rs_prerelease";
-            string uri = "https://buildfeed.net/api/";
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(new Uri(uri));
-            ObservableCollection<BuildFeedItem> Data = JsonConvert.DeserializeObject<ObservableCollection<BuildFeedItem>>(await response.Content.ReadAsStringAsync());
-            bf.ItemsSource = Data;
-            
+            try
+            {
+                //string uri = "https://buildfeed.net/api/GetBuildsByLab?lab=rs_prerelease";
+                string uri = "https://buildfeed.net/api/";
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(new Uri(uri));
+                ObservableCollection<BuildFeedItem> Data = JsonConvert.DeserializeObject<ObservableCollection<BuildFeedItem>>(await response.Content.ReadAsStringAsync());
+                bf.ItemsSource = Data;
+            }
+            catch (Exception e)
+            {
+                NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                bf.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
         }
 
         private void DataTransferManager_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)

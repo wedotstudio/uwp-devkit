@@ -20,22 +20,28 @@
             <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}"/>
-            <TextBlock Text="Windows Blog" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
-        </Grid>
-        <Grid Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
-            <TextBlock x:Name="NC"  Text="Please connect to the Internet in order to use the feature." Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed"/>
-            <Pivot x:Name="main">
-                <PivotItem Header="Windows Insider Program">
-                    <ListView x:Name="wip" ItemTemplate="{StaticResource ItemTemplate}"
+        <Grid Grid.Row="0" Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
+        <TextBlock Text="Windows Blog" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
+    </Grid>
+    <Grid Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+        <TextBlock x:Name="NC"  Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed">
+                <Run Text="We have trouble connecting to the server. Here are several things you can try: "/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="     · Try again later."/>
+                <LineBreak/>
+                <Run Text="     · Check your network connection." />
+        </TextBlock>
+        <Pivot x:Name="main">
+            <PivotItem Header="Windows Insider Program">
+                <ListView x:Name="wip" ItemTemplate="{StaticResource ItemTemplate}"
                           IsItemClickEnabled="False" />
-                </PivotItem>
-                <PivotItem Header="Windows Developer">
-                    <ListView x:Name="wd" ItemTemplate="{StaticResource ItemTemplate}"
+            </PivotItem>
+            <PivotItem Header="Windows Developer">
+                <ListView x:Name="wd" ItemTemplate="{StaticResource ItemTemplate}"
                           IsItemClickEnabled="False" />
-                </PivotItem>
-            </Pivot>
-        </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
     </Grid>
 </Page>

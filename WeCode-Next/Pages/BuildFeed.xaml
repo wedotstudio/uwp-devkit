@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="WeCode_Next.Pages.BuildFeed"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -48,14 +48,21 @@
             <TextBlock Text="BuildFeed" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
             </Grid>
             <Grid Grid.Row="1"  Background="{ThemeResource SystemControlAcrylicWindowBrush}">
-                <TextBlock x:Name="NC"  Text="Please connect to the Internet in order to use the feature." Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed"/>
-                <ListView x:Name="bf" ItemTemplate="{StaticResource ItemTemplate}" IsItemClickEnabled="False" >
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment"  Value="Stretch"></Setter>
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                </ListView>
-            </Grid>
+            <TextBlock x:Name="NC" Foreground="{ThemeResource SystemControlBackgroundBaseMediumHighBrush}" Margin="10" Visibility="Collapsed">
+                <Run Text="We have trouble connecting to the server. Here are several things you can try: "/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="     · Try again later."/>
+                <LineBreak/>
+                <Run Text="     · Check your network connection." />
+            </TextBlock>
+            <ListView x:Name="bf" ItemTemplate="{StaticResource ItemTemplate}" IsItemClickEnabled="False" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment"  Value="Stretch"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
         </Grid>
+    </Grid>
 </Page>

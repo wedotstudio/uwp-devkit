@@ -101,25 +101,41 @@ namespace WeCode_Next.Pages
 
         private async void NewsLoad(bool type)
         {
-            string uri = (type) ? "https://blogs.windows.com/buildingapps/feed/" : "https://blogs.windows.com/windowsexperience/tag/windows-insider-program/feed/";
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(new Uri(uri));
-            XDocument news = XDocument.Load(await response.Content.ReadAsStreamAsync());
-            foreach (var item in news.Descendants("item"))
+            try
+            {
+                string uri = (type) ? "https://blogs.windows.com/buildingapps/feed/" : "https://blogs.windows.com/windowsexperience/tag/windows-insider-program/feed/";
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(new Uri(uri));
+                XDocument news = XDocument.Load(await response.Content.ReadAsStreamAsync());
+                foreach (var item in news.Descendants("item"))
+                {
+                    if (type)
+                    {
+                        dn_t.Text = (string)item.Element("title");
+                        dn_pd.Text = (string)item.Element("pubDate");
+                        dn_l.NavigateUri = new Uri((string)item.Element("link"));
+                    }
+                    else
+                    {
+                        in_t.Text = (string)item.Element("title");
+                        in_pd.Text = (string)item.Element("pubDate");
+                        in_l.NavigateUri = new Uri((string)item.Element("link"));
+                    }
+                    break;
+                }
+            }
+            catch (Exception e)
             {
                 if (type)
                 {
-                    dn_t.Text = (string)item.Element("title");
-                    dn_pd.Text = (string)item.Element("pubDate");
-                    dn_l.NavigateUri = new Uri((string)item.Element("link"));
+                    dn_t.Text = "There is a problem when trying to load content.";
+                    dn_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 }
                 else
                 {
-                    in_t.Text = (string)item.Element("title");
-                    in_pd.Text = (string)item.Element("pubDate");
-                    in_l.NavigateUri = new Uri((string)item.Element("link"));
+                    in_t.Text = "There is a problem when trying to load content.";
+                    in_l.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 }
-                break;
             }
         }
     }

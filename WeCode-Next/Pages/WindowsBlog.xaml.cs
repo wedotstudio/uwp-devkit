@@ -58,24 +58,32 @@ namespace WeCode_Next.Pages
 
         private async void NewsLoad(bool type)
         {
-            string uri = (type) ? "https://blogs.windows.com/buildingapps/feed/" : "https://blogs.windows.com/windowsexperience/tag/windows-insider-program/feed/";
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(new Uri(uri));
-            XDocument news = XDocument.Load(await response.Content.ReadAsStreamAsync());
-            var data = from item in news.Descendants("item")
-                       select new APIs
-                       {
-                           Title = (string)item.Element("title"),
-                           PubDate = (string)item.Element("pubDate"),
-                           Link = (string)item.Element("link")
-                       };
-            if (type)
+            try
             {
-                wd.ItemsSource = data;
+                string uri = (type) ? "https://blogs.windows.com/buildingapps/feed/" : "https://blogs.windows.com/windowsexperience/tag/windows-insider-program/feed/";
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(new Uri(uri));
+                XDocument news = XDocument.Load(await response.Content.ReadAsStreamAsync());
+                var data = from item in news.Descendants("item")
+                           select new APIs
+                           {
+                               Title = (string)item.Element("title"),
+                               PubDate = (string)item.Element("pubDate"),
+                               Link = (string)item.Element("link")
+                           };
+                if (type)
+                {
+                    wd.ItemsSource = data;
+                }
+                else
+                {
+                    wip.ItemsSource = data;
+                }
             }
-            else
+            catch (Exception e)
             {
-                wip.ItemsSource = data;
+                NC.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                main.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
         }
     }
