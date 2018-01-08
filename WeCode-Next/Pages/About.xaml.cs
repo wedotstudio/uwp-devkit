@@ -3,6 +3,7 @@ using Windows.Storage;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 
 namespace WeCode_Next.Pages
 {
@@ -39,6 +40,16 @@ namespace WeCode_Next.Pages
         private async void Button_Click_3(object sender, RoutedEventArgs e)
         {
             await Launcher.LaunchUriAsync(new Uri("mailto:patrick.we.studio@outlook.com"));
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+        }
+
+        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
         }
     }
 }

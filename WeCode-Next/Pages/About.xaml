@@ -15,8 +15,8 @@
         <Grid Grid.Row="0"  Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
             <TextBlock Text="About" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
         </Grid>
-            <Grid Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
-           <ScrollViewer>
+        <Grid Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+            <ScrollViewer>
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Border Background="{ThemeResource SystemControlBackgroundAccentBrush}" Opacity="0.6" Height="80" Width="80" HorizontalAlignment="Left" Margin="10">
@@ -24,7 +24,7 @@
                         </Border>
                         <StackPanel Margin="5">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock  x:Uid="AppN" Text="UWP DevKit 5.3 " FontWeight="Light" FontSize="25"/>
+                                <TextBlock  x:Uid="AppN" Text="UWP DevKit 5 " FontWeight="Light" FontSize="25"/>
                                 <Border BorderBrush="Orange" BorderThickness="1" CornerRadius="5" Margin="5,0" Visibility="Collapsed">
                                     <TextBlock Text="Insider" Foreground="DarkOrange" FontWeight="Light" FontSize="25" Margin="5,0" VerticalAlignment="Center"/>
                                 </Border>
@@ -37,9 +37,33 @@
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
+                    <TextBlock Margin="10,5" IsTextSelectionEnabled="True" TextWrapping="WrapWholeWords">
+                        <Run Text="Support" FontSize="20%"/>
+                        <LineBreak/><LineBreak/>
+                        <Run Text="This app is completely free, but you can support my work via WeChat Pay(微信支付), Alipay(支付宝) or Paypal. Your support will keep motivating me to improve the product."/>
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal"  Margin="10,5">
+                        <HyperlinkButton NavigateUri="https://www.paypal.me/callmepk" Margin="0,0,10,0">Paypal</HyperlinkButton>
+                        <HyperlinkButton Click="HyperlinkButton_Click"  Margin="0,0,10,0">WeChat Pay(微信支付)
+                            <FlyoutBase.AttachedFlyout>
+                                <Flyout>
+                                    <Image Width="300" Source="../Assets/wechatpay.jpg"/>
+                                </Flyout>
+                            </FlyoutBase.AttachedFlyout>
+                        </HyperlinkButton>
+                        <HyperlinkButton Click="HyperlinkButton_Click_1">Alipay(支付宝)
+                            <FlyoutBase.AttachedFlyout>
+                                <Flyout>
+                                    <Image Width="300" Source="../Assets/alipay.jpg"/>
+                                </Flyout>
+                            </FlyoutBase.AttachedFlyout>
+                        </HyperlinkButton>
+                    </StackPanel>
+
                     <controls:MarkdownTextBlock x:Name="MarkdownText" Margin="10" LinkForeground="{ThemeResource SystemControlBackgroundAccentBrush}" LinkClicked="MarkdownText_LinkClicked"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
     </Grid>
+
 </Page>
