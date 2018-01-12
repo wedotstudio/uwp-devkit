@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace WeCode_Next.Pages
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class ColorPalette : Page
     {
         public ColorPalette()
         {
             this.InitializeComponent();
+
+            InitialData();
+        }
+
+        private void InitialData()
+        {
+            Color basecolor = Main_Picker.Color;
+            rgb_r.Text = basecolor.R.ToString();
+            rgb_g.Text = basecolor.G.ToString();
+            rgb_b.Text = basecolor.B.ToString();
+
         }
     }
 }

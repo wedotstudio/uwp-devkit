@@ -101,6 +101,8 @@
     </Compile>
     <Compile Include="Converters\RGBConverters.cs" />
     <Compile Include="Core\Base.cs" />
+    <Compile Include="Core\ColorHelper\Model.cs" />
+    <Compile Include="Core\ColorHelper\RGB2.cs" />
     <Compile Include="Core\DeviceInformationHelper.cs" />
     <Compile Include="Core\Generator.cs" />
     <Compile Include="DataModel\ColorViewModel.cs" />
