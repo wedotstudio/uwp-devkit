@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WeCode_Next.DataModel;
 using WeCode_Next.Pages;
 using Windows.Graphics.Display;
@@ -9,6 +10,7 @@ using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Hosting;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace WeCode_Next
 {
@@ -65,6 +67,9 @@ namespace WeCode_Next
             titleBar.ButtonForegroundColor = (isDark) ? Colors.White : Colors.Black;
             Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
 
+            BitmapImage de_icon = new BitmapImage(new Uri("ms-appx:///Assets/app.png"));
+            BitmapImage bk_icon = new BitmapImage(new Uri("ms-appx:///Assets/app-dark.png"));
+            panel_icon.Source = isDark? de_icon:bk_icon;
             //InitializeFrostedGlass(bgGrid);
         }
         private void InitializeFrostedGlass(UIElement glassHost)
