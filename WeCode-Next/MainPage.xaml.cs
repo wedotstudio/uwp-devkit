@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Data.Xml.Dom;
+using System.Threading.Tasks;
 
 namespace WeCode_Next
 {
@@ -24,7 +25,7 @@ namespace WeCode_Next
 
             InitializeUI();
             InitializeList();
-            CheckUpdate();
+            CheckUpdateAsync();
 
             Loaded += MainPage_Loaded;
         }
@@ -87,9 +88,30 @@ namespace WeCode_Next
             bindSizeAnimation.SetReferenceParameter("hostVisual", hostVisual);
             glassVisual.StartAnimation("Size", bindSizeAnimation);
         }
-        private void CheckUpdate()
+        private async Task CheckUpdateAsync()
         {
-            InAppPopupNotification.Show("tests");
+            try
+            {
+                string url = "https://garage.patrickwu.cf/sources/logfile/uwp-devkit.log";
+#if DEBUG
+                url = "https://garage.patrickwu.cf/sources/logfile/uwp-devkit-test.log";
+#endif
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(new Uri(url));
+                String verString = await response.Content.ReadAsStringAsync();
+                int verInt = Convert.ToInt32(verString);
+                if (verInt > Convert.ToInt32(Core.Base.VERSION))
+                {
+                    int verInt_main = Convert.ToInt32(verString.Substring(0, 2));
+                    int verInt_sub = Convert.ToInt32(verString.Substring(2, 2));
+                    v_m.Text = verInt_main.ToString();
+                    v_s.Text = verInt_sub.ToString();
+                    InAppPopupNotification.Show();
+                }
+            } catch (Exception e)
+            {
+
+            }
         }
         private void ItemClick(object sender, ItemClickEventArgs e)
         {
