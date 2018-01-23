@@ -133,5 +133,11 @@ namespace WeCode_Next
                 await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
             }
         }
+
+        private async void update_Click(object sender, RoutedEventArgs e)
+        {
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://pdp/?ProductId=9NBLGGH5P90F"));
+            
+        }
     }
 }

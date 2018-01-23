@@ -70,7 +70,7 @@
                     UWP DevKit v<Run x:Name="vtext"/> is available.
                 </TextBlock>
                 <Button Grid.Column="1" Content="Changelog" Click="changelog_Click" Margin="5 0"/>
-                <Button Grid.Column="2" Content="Update" Margin="5 0"/>
+                <Button Grid.Column="2" Content="Update" Click="update_Click" Margin="5 0"/>
                 <Button Grid.Column="3" Content="Dismiss" Margin="5 0"/>
             </Grid>
         </controls:InAppNotification>
