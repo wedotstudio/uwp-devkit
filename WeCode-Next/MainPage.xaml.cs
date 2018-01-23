@@ -19,6 +19,7 @@ namespace WeCode_Next
 {
     public sealed partial class MainPage : Page
     {
+        public String verNaStr="";
         public MainPage()
         {
             this.InitializeComponent();
@@ -104,8 +105,8 @@ namespace WeCode_Next
                 {
                     int verInt_main = Convert.ToInt32(verString.Substring(0, 2));
                     int verInt_sub = Convert.ToInt32(verString.Substring(2, 2));
-                    v_m.Text = verInt_main.ToString();
-                    v_s.Text = verInt_sub.ToString();
+                    verNaStr = verInt_main.ToString() + "." + verInt_sub.ToString();
+                    vtext.Text = verNaStr;
                     InAppPopupNotification.Show();
                 }
             } catch (Exception e)
@@ -119,6 +120,18 @@ namespace WeCode_Next
             if (view.SelectedIndex >= 0) view.SelectedIndex = -1;
             var items = (Nav)e.ClickedItem;
             frame.Navigate(items.PageType);
+        }
+
+        private async void changelog_Click(object sender, RoutedEventArgs e)
+        {
+            if (verNaStr != "")
+            {
+                string url = "https://github.com/WEdotStudio/UWP-DevKit/releases/tag/v"+verNaStr;
+#if DEBUG
+                url = "https://github.com/WEdotStudio/UWP-DevKit/wiki/Changelog-Before-5.0";
+#endif
+                await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
+            }
         }
     }
 }
