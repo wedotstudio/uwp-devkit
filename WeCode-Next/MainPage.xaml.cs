@@ -137,7 +137,11 @@ namespace WeCode_Next
         private async void update_Click(object sender, RoutedEventArgs e)
         {
             await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://pdp/?ProductId=9NBLGGH5P90F"));
-            
+        }
+
+        private void dismiss_Click(object sender, RoutedEventArgs e)
+        {
+            InAppPopupNotification.Dismiss();
         }
     }
 }

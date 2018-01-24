@@ -71,7 +71,7 @@
                 </TextBlock>
                 <Button Grid.Column="1" Content="Changelog" Click="changelog_Click" Margin="5 0"/>
                 <Button Grid.Column="2" Content="Update" Click="update_Click" Margin="5 0"/>
-                <Button Grid.Column="3" Content="Dismiss" Margin="5 0"/>
+                <Button Grid.Column="3" Content="Dismiss" Click="dismiss_Click" Margin="5 0"/>
             </Grid>
         </controls:InAppNotification>
         <VisualStateManager.VisualStateGroups>
