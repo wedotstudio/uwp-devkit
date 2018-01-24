@@ -13,16 +13,18 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0"   Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}">
-            <TextBlock Text="Quick Access" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
+            <TextBlock Text="Dev Shortcuts" Style="{StaticResource TitleTextBlockStyle}" Margin="10" VerticalAlignment="Bottom"/>
         </Grid>
-        <GridView Grid.Row="1"  Background="{ThemeResource SystemControlAcrylicWindowBrush}" x:Name="gridView" SelectionMode="None" IsItemClickEnabled="True" ItemClick="Icon_Click" Margin="5,0,0,0">
+        <GridView Grid.Row="1"  Background="{ThemeResource SystemControlAcrylicWindowBrush}" x:Name="gridView" SelectionMode="None" IsItemClickEnabled="True" ItemClick="Icon_Click" Padding="10">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="100" Width="100">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="60px"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="{Binding glyph}" FontSize="30px"/>
+                        <TextBlock Grid.Row="1" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12px" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
@@ -32,6 +34,7 @@
                     <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundAccentBrush}"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="10px"/>
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
