@@ -40,4 +40,11 @@ namespace WeCode_Next.DataModel
         public object SourceDetails { get; set; }
         public object LeakDate { get; set; }
     }
+
+    public class AccessItem
+    {
+        public string Name { get; set;}
+        public Uri UriStr { get; set; }
+        public string glyph { get; set; }
+    }
 }

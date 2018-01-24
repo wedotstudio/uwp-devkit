@@ -42,6 +42,7 @@ namespace WeCode_Next
             List<Nav> NavList = new List<Nav>
             {
                 new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
+                new Nav { Icon = "", Name = "Dev Shortcuts", PageType = typeof(Tools) },
                 new Nav { Icon = "", Name = "Windows Blog", PageType = typeof(WindowsBlog) },
                 new Nav { Icon = "", Name = "BuildFeed", PageType = typeof(BuildFeed) },
                 new Nav { Icon = "", Name = "Icon Browser", PageType = typeof(IconBrowser) },
