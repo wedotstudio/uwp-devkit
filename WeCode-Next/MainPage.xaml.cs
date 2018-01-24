@@ -1,27 +1,32 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using WeCode_Next.DataModel;
 using WeCode_Next.Pages;
-using Windows.Graphics.Display;
 using Windows.UI;
 using Windows.UI.Composition;
-using Windows.UI.Core;
+using Windows.UI.Notifications;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Data.Xml.Dom;
+using System.Threading.Tasks;
 
 namespace WeCode_Next
 {
     public sealed partial class MainPage : Page
     {
+        public String verNaStr="";
         public MainPage()
         {
             this.InitializeComponent();
 
             InitializeUI();
             InitializeList();
+            CheckUpdateAsync();
 
             Loaded += MainPage_Loaded;
         }
@@ -84,13 +89,59 @@ namespace WeCode_Next
             bindSizeAnimation.SetReferenceParameter("hostVisual", hostVisual);
             glassVisual.StartAnimation("Size", bindSizeAnimation);
         }
+        private async Task CheckUpdateAsync()
+        {
+            try
+            {
+                string url = "https://garage.patrickwu.cf/sources/logfile/uwp-devkit.log";
+#if DEBUG
+                url = "https://garage.patrickwu.cf/sources/logfile/uwp-devkit-test.log";
+#endif
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(new Uri(url));
+                String verString = await response.Content.ReadAsStringAsync();
+                int verInt = Convert.ToInt32(verString);
+                if (verInt > Convert.ToInt32(Core.Base.VERSION))
+                {
+                    int verInt_main = Convert.ToInt32(verString.Substring(0, 2));
+                    int verInt_sub = Convert.ToInt32(verString.Substring(2, 2));
+                    verNaStr = verInt_main.ToString() + "." + verInt_sub.ToString();
+                    vtext.Text = verNaStr;
+                    InAppPopupNotification.Show();
+                }
+            } catch (Exception e)
+            {
 
+            }
+        }
         private void ItemClick(object sender, ItemClickEventArgs e)
         {
             if (bottom_view.SelectedIndex >= 0) bottom_view.SelectedIndex = -1;
             if (view.SelectedIndex >= 0) view.SelectedIndex = -1;
             var items = (Nav)e.ClickedItem;
             frame.Navigate(items.PageType);
+        }
+
+        private async void changelog_Click(object sender, RoutedEventArgs e)
+        {
+            if (verNaStr != "")
+            {
+                string url = "https://github.com/WEdotStudio/UWP-DevKit/releases/tag/v"+verNaStr;
+#if DEBUG
+                url = "https://github.com/WEdotStudio/UWP-DevKit/wiki/Changelog-Before-5.0";
+#endif
+                await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
+            }
+        }
+
+        private async void update_Click(object sender, RoutedEventArgs e)
+        {
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://pdp/?ProductId=9NBLGGH5P90F"));
+        }
+
+        private void dismiss_Click(object sender, RoutedEventArgs e)
+        {
+            InAppPopupNotification.Dismiss();
         }
     }
 }

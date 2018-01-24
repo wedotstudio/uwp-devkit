@@ -55,18 +55,6 @@ namespace WeCode_Next.Pages
             {
                 history_content.Text = "0 KB";
             }
-
-            //Push Notifications
-            if (_appSettings.Values.ContainsKey("IsPushEnabled"))
-            {
-                push_n.IsOn = Convert.ToBoolean(_appSettings.Values["IsPushEnabled"]);
-            }
-            else
-            {
-                push_n.IsOn = true;
-                _appSettings.Values["IsPushEnabled"] = push_n.IsOn;
-            }
-
         }
 
         private void theme_s_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -99,12 +87,6 @@ namespace WeCode_Next.Pages
             history_content.Text = "0 KB";
         }
 
-        private async void push_n_Toggled(object sender, RoutedEventArgs e)
-        {
-            _appSettings.Values["IsPushEnabled"] = push_n.IsOn;
-            if (Convert.ToBoolean(_appSettings.Values["IsPushEnabled"])) Debug.WriteLine("WAT");
-        }
-
         private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
             var messageDialog = new MessageDialog("You are about to reset the settings. Are you sure you want to proceed?");
@@ -125,7 +107,6 @@ namespace WeCode_Next.Pages
         {
             if (command.Label == "I am Sure")
             {
-                _appSettings.Values.Remove("IsPushEnabled");
                 _appSettings.Values.Remove("Themes");
                 _appSettings.Values.Remove("OfflineMode");
                 if (await Base.IsFilePresent("history.log"))
