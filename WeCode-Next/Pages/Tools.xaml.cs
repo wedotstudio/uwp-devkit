@@ -7,6 +7,7 @@ using WeCode_Next.DataModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -56,9 +57,10 @@ namespace WeCode_Next.Pages
             }
         }
 
-        private void Icon_Click(object sender, ItemClickEventArgs e)
+        private async void Icon_Click(object sender, ItemClickEventArgs e)
         {
-
+            AccessItem accessItem = e.ClickedItem as AccessItem;
+            await Launcher.LaunchUriAsync(accessItem.UriStr);
         }
 
     }

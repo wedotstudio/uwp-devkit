@@ -24,7 +24,7 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="{Binding glyph}" FontSize="30px"/>
-                        <TextBlock Grid.Row="1" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12px" TextWrapping="Wrap" TextAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="13px" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
@@ -34,7 +34,8 @@
                     <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundAccentBrush}"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="Margin" Value="10px"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Padding" Value="5"/>
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
