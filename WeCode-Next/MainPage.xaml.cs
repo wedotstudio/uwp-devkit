@@ -14,12 +14,14 @@ using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Data.Xml.Dom;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Navigation;
 
 namespace WeCode_Next
 {
     public sealed partial class MainPage : Page
     {
         public String verNaStr="";
+        public string app_param = "";
         public MainPage()
         {
             this.InitializeComponent();
@@ -33,10 +35,55 @@ namespace WeCode_Next
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            view.SelectedIndex = 0;
-            frame.Navigate(typeof(Home));
+            
+            switch (app_param)
+            {
+                default:
+                    view.SelectedIndex = 0;
+                    frame.Navigate(typeof(Home));
+                    break;
+                case "DevSh":
+                    view.SelectedIndex = 1;
+                    frame.Navigate(typeof(Tools));
+                    break;
+                case "WinBlog":
+                    view.SelectedIndex = 2;
+                    frame.Navigate(typeof(WindowsBlog));
+                    break;
+                case "BFeed":
+                    view.SelectedIndex = 3;
+                    frame.Navigate(typeof(BuildFeed));
+                    break;
+                case "IBrowser":
+                    view.SelectedIndex = 4;
+                    frame.Navigate(typeof(IconBrowser));
+                    break;
+                case "UriT":
+                    view.SelectedIndex = 5;
+                    frame.Navigate(typeof(URILauncher));
+                    break;
+                case "GuidG":
+                    view.SelectedIndex = 6;
+                    frame.Navigate(typeof(GUIDGen));
+                    break;
+                case "AssG":
+                    view.SelectedIndex = 7;
+                    frame.Navigate(typeof(AssetsGen));
+                    break;
+                case "ReEx":
+                    view.SelectedIndex = 8;
+                    frame.Navigate(typeof(RegularExpression));
+                    break;
+            }
+            
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
 
+            app_param = (string)e.Parameter;
+
+            base.OnNavigatedTo(e);
+        }
         private void InitializeList()
         {
             List<Nav> NavList = new List<Nav>
