@@ -28,8 +28,6 @@ AppPackageName: 56367PatrickWu.DeveloperToolsForUWP
 
 AppPackageFamilyName: 56367PatrickWu.DeveloperToolsForUWP_jygj8m38vmabg
 
-Version: 5.4.27
-
 
 
 
