@@ -6,6 +6,9 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using Windows.UI.StartScreen;
+using WeCode_Next.Core;
 
 namespace WeCode_Next
 {
@@ -41,8 +44,10 @@ namespace WeCode_Next
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            await ConfigureJumpList();
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -76,6 +81,26 @@ namespace WeCode_Next
                 Window.Current.Activate();
             }
         }
+
+        private async Task ConfigureJumpList()
+        {
+            JumpList jumpList = await JumpList.LoadCurrentAsync();
+
+            jumpList.Items.Clear();
+            Base.JumpListBuilder(ref jumpList, "DevSh", "Dev Shortcuts", "ms-appx:///Assets/app.png");
+            Base.JumpListBuilder(ref jumpList, "WinBlog", "Windows Blog", "ms-appx:///Assets/app.png");
+            Base.JumpListBuilder(ref jumpList, "BFeed", "BuildFeed", "ms-appx:///Assets/app.png");
+            Base.JumpListBuilder(ref jumpList, "IBrowser", "Fonticon Browser", "ms-appx:///Assets/app.png");
+            Base.JumpListBuilder(ref jumpList, "UriT", "URI Tester", "ms-appx:///Assets/app.png");
+            Base.JumpListBuilder(ref jumpList, "GuidG", "GUID Generator", "ms-appx:///Assets/app.png");
+            Base.JumpListBuilder(ref jumpList, "AssG", "Assets Generator", "ms-appx:///Assets/app.png");
+            Base.JumpListBuilder(ref jumpList, "ReEx", "Regular Expression", "ms-appx:///Assets/app.png");
+
+            await jumpList.SaveAsync();
+        }
+
+        
+
         protected override void OnActivated(IActivatedEventArgs args)
         {
             base.OnActivated(args);
