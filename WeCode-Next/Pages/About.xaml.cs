@@ -39,7 +39,7 @@ namespace WeCode_Next.Pages
 
         private async void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            await Launcher.LaunchUriAsync(new Uri("mailto:patrick.we.studio@outlook.com"));
+            await Launcher.LaunchUriAsync(new Uri("mailto:we@patrickwu.ml"));
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

@@ -141,9 +141,9 @@ namespace WeCode_Next
         {
             try
             {
-                string url = "https://garage.patrickwu.cf/sources/logfile/uwp-devkit.log";
+                string url = "https://api.patrickwu.ml/sources/logfile/uwp-devkit.log";
 #if DEBUG
-                url = "https://garage.patrickwu.cf/sources/logfile/uwp-devkit-test.log";
+                url = "https://api.patrickwu.ml/sources/logfile/uwp-devkit-test.log";
 #endif
                 var client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync(new Uri(url));
