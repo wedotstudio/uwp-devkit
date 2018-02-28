@@ -104,8 +104,8 @@ namespace WeCode_Next
 
             List<Nav> BottomNavList = new List<Nav>
             {
-                new Nav { Icon = "", Name = "Donation", PageType = typeof(Donation) },
-                new Nav { Icon = "", Name = "Settings & About", PageType = typeof(Settings) }
+                new Nav { Icon = "", Name = "Donation", PageType = typeof(Donation) },
+                new Nav { Icon = "", Name = "Settings & About", PageType = typeof(Settings) }
             };
            bottom_view.ItemsSource = BottomNavList;
         }
