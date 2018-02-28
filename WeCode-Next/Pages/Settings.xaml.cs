@@ -2,10 +2,11 @@
 using System.Diagnostics;
 using WeCode_Next.Core;
 using Windows.Storage;
+using Windows.System;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-
+using Windows.UI.Xaml.Controls.Primitives;
 
 namespace WeCode_Next.Pages
 {
@@ -16,8 +17,33 @@ namespace WeCode_Next.Pages
         {
             _appSettings = ApplicationData.Current.LocalSettings;
             this.InitializeComponent();
-
+            InitAbout();
             Loaded += Settings_Loaded;
+        }
+        private async void InitAbout()
+        {
+            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/Data/about.md"));
+            MarkdownText.Text = await FileIO.ReadTextAsync(file);
+        }
+
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9nblggh5p90f"));
+        }
+
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(new Uri("https://github.com/patrick330602/UWP-DevKit"));
+        }
+
+        private async void MarkdownText_LinkClicked(object sender, Microsoft.Toolkit.Uwp.UI.Controls.LinkClickedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(new Uri(e.Link));
+        }
+
+        private async void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(new Uri("mailto:we@patrickwu.ml"));
         }
 
         private async void Settings_Loaded(object sender, RoutedEventArgs e)
@@ -87,7 +113,7 @@ namespace WeCode_Next.Pages
             history_content.Text = "0 KB";
         }
 
-        private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        private async void ResetButton_Click(object sender, RoutedEventArgs e)
         {
             var messageDialog = new MessageDialog("You are about to reset the settings. Are you sure you want to proceed?");
 
