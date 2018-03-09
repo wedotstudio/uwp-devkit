@@ -87,14 +87,14 @@ namespace WeCode_Next
             JumpList jumpList = await JumpList.LoadCurrentAsync();
 
             jumpList.Items.Clear();
-            Base.JumpListBuilder(ref jumpList, "DevSh", "Dev Shortcuts", "ms-appx:///Assets/app.png");
-            Base.JumpListBuilder(ref jumpList, "WinBlog", "Windows Blog", "ms-appx:///Assets/app.png");
-            Base.JumpListBuilder(ref jumpList, "BFeed", "BuildFeed", "ms-appx:///Assets/app.png");
-            Base.JumpListBuilder(ref jumpList, "IBrowser", "Fonticon Browser", "ms-appx:///Assets/app.png");
-            Base.JumpListBuilder(ref jumpList, "UriT", "URI Tester", "ms-appx:///Assets/app.png");
-            Base.JumpListBuilder(ref jumpList, "GuidG", "GUID Generator", "ms-appx:///Assets/app.png");
-            Base.JumpListBuilder(ref jumpList, "AssG", "Assets Generator", "ms-appx:///Assets/app.png");
-            Base.JumpListBuilder(ref jumpList, "ReEx", "Regular Expression", "ms-appx:///Assets/app.png");
+            Base.JumpListBuilder(ref jumpList, "DevSh", "Dev Shortcuts", "ms-appx:///Assets/Icons/ds.png");
+            Base.JumpListBuilder(ref jumpList, "WinBlog", "Windows Blog", "ms-appx:///Assets/Icons/wb.png");
+            Base.JumpListBuilder(ref jumpList, "BFeed", "BuildFeed", "ms-appx:///Assets/Icons/bf.png");
+            Base.JumpListBuilder(ref jumpList, "IBrowser", "Fonticon Browser", "ms-appx:///Assets/Icons/fb.png");
+            Base.JumpListBuilder(ref jumpList, "UriT", "URI Tester", "ms-appx:///Assets/Icons/ul.png");
+            Base.JumpListBuilder(ref jumpList, "GuidG", "GUID Generator", "ms-appx:///Assets/Icons/rgg.png");
+            Base.JumpListBuilder(ref jumpList, "AssG", "Assets Generator", "ms-appx:///Assets/Icons/ag.png");
+            Base.JumpListBuilder(ref jumpList, "ReEx", "Regular Expression", "ms-appx:///Assets/Icons/re.png");
 
             await jumpList.SaveAsync();
         }
