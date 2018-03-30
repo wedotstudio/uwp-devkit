@@ -144,5 +144,14 @@ namespace WeCode_Next.Pages
                 await messageDialog.ShowAsync();
             }
         }
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+        }
+
+        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+        }
     }
 }

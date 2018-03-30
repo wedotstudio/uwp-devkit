@@ -60,6 +60,27 @@
                             </DataTemplate>
                         </HyperlinkButton.ContentTemplate>
                     </HyperlinkButton>
+                    <TextBlock Text="Donation" Style="{StaticResource TitleTextBlockStyle}" Margin="10" />
+                    <TextBlock Margin="10,5" IsTextSelectionEnabled="True" TextWrapping="WrapWholeWords">
+                        <Run Text="This app is completely free, but you can support my work via WeChat Pay(微信支付), Alipay(支付宝) or Paypal. Your support will keep motivating me to improve the product."/>
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal"  Margin="10,5">
+                        <HyperlinkButton NavigateUri="https://www.paypal.me/callmepk" Margin="0,0,10,0">Paypal</HyperlinkButton>
+                        <HyperlinkButton Click="HyperlinkButton_Click"  Margin="0,0,10,0">WeChat Pay(微信支付)
+                            <FlyoutBase.AttachedFlyout>
+                                <Flyout>
+                                    <Image Width="300" Source="../Assets/wechatpay.jpg"/>
+                                </Flyout>
+                            </FlyoutBase.AttachedFlyout>
+                        </HyperlinkButton>
+                        <HyperlinkButton Click="HyperlinkButton_Click_1">Alipay(支付宝)
+                            <FlyoutBase.AttachedFlyout>
+                                <Flyout>
+                                    <Image Width="300" Source="../Assets/alipay.jpg"/>
+                                </Flyout>
+                            </FlyoutBase.AttachedFlyout>
+                        </HyperlinkButton>
+                    </StackPanel>
                     <TextBlock Text="About" Style="{StaticResource TitleTextBlockStyle}" Margin="10" />
                     <controls:MarkdownTextBlock x:Name="MarkdownText" Margin="10" LinkForeground="{ThemeResource SystemControlBackgroundAccentBrush}" LinkClicked="MarkdownText_LinkClicked"/>
                 </StackPanel>

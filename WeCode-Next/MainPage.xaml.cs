@@ -28,7 +28,7 @@ namespace WeCode_Next
 
             InitializeUI();
             InitializeList();
-            CheckUpdateAsync();
+            //CheckUpdateAsync();
 
             Loaded += MainPage_Loaded;
         }
@@ -104,7 +104,7 @@ namespace WeCode_Next
 
             List<Nav> BottomNavList = new List<Nav>
             {
-                new Nav { Icon = "", Name = "Donation", PageType = typeof(Donation) },
+                //new Nav { Icon = "", Name = "Donation", PageType = typeof(Donation) },
                 new Nav { Icon = "", Name = "Settings & About", PageType = typeof(Settings) }
             };
            bottom_view.ItemsSource = BottomNavList;
@@ -137,7 +137,7 @@ namespace WeCode_Next
             bindSizeAnimation.SetReferenceParameter("hostVisual", hostVisual);
             glassVisual.StartAnimation("Size", bindSizeAnimation);
         }
-        private async Task CheckUpdateAsync()
+        /*private async Task CheckUpdateAsync()
         {
             try
             {
@@ -161,7 +161,7 @@ namespace WeCode_Next
             {
 
             }
-        }
+        }*/
         private void ItemClick(object sender, ItemClickEventArgs e)
         {
             if (bottom_view.SelectedIndex >= 0) bottom_view.SelectedIndex = -1;
