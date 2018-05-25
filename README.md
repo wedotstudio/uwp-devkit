@@ -2,7 +2,7 @@
 
 # UWP DevKit
 
-[![AppVeyor](https://img.shields.io/appveyor/ci/patrick330602/uwp-devkit.svg?style=flat-square)]() [![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/patrick330602/UWP-DevKit/master/LICENSE) ![GitHub (pre-)release](https://img.shields.io/github/release/patrick330602/UWP-DevKit/all.svg?style=flat-square)
+[![AppVeyor](https://img.shields.io/appveyor/ci/patrick330602/uwp-devkit.svg?style=flat-square)]() [![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/patrick330602/UWP-DevKit/master/LICENSE) ![GitHub (pre-)release](https://img.shields.io/github/release/patrick330602/UWP-DevKit/all.svg?style=flat-square) ![Maintenance](https://img.shields.io/maintenance/no/2018.svg?style=flat-square)
 
 A simple but complete developer toolkit for UWP developers. It provides users with following features:
 
