@@ -50,28 +50,28 @@ namespace WeCode_Next
                     view.SelectedIndex = 2;
                     frame.Navigate(typeof(WindowsBlog));
                     break;
-                case "BFeed":
-                    view.SelectedIndex = 3;
-                    frame.Navigate(typeof(BuildFeed));
-                    break;
+                //case "BFeed":
+                //    view.SelectedIndex = 3;
+                //    frame.Navigate(typeof(BuildFeed));
+                //    break;
                 case "IBrowser":
-                    view.SelectedIndex = 4;
+                    view.SelectedIndex = 3;
                     frame.Navigate(typeof(IconBrowser));
                     break;
                 case "UriT":
-                    view.SelectedIndex = 5;
+                    view.SelectedIndex = 4;
                     frame.Navigate(typeof(URILauncher));
                     break;
                 case "GuidG":
-                    view.SelectedIndex = 6;
+                    view.SelectedIndex = 5;
                     frame.Navigate(typeof(GUIDGen));
                     break;
                 case "AssG":
-                    view.SelectedIndex = 7;
+                    view.SelectedIndex = 6;
                     frame.Navigate(typeof(AssetsGen));
                     break;
                 case "ReEx":
-                    view.SelectedIndex = 8;
+                    view.SelectedIndex = 7;
                     frame.Navigate(typeof(RegularExpression));
                     break;
             }
@@ -91,7 +91,7 @@ namespace WeCode_Next
                 new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
                 new Nav { Icon = "", Name = "Dev Shortcuts", PageType = typeof(Tools) },
                 new Nav { Icon = "", Name = "Windows Blog", PageType = typeof(WindowsBlog) },
-                new Nav { Icon = "", Name = "BuildFeed", PageType = typeof(BuildFeed) },
+                //new Nav { Icon = "", Name = "BuildFeed", PageType = typeof(BuildFeed) },
                 new Nav { Icon = "", Name = "Fonticon Browser", PageType = typeof(IconBrowser) },
                 new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
                 new Nav { Icon = "", Name = "GUID Generator", PageType = typeof(GUIDGen) },
