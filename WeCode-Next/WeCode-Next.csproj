@@ -115,9 +115,6 @@
     <Compile Include="Pages\AssetsGen.xaml.cs">
       <DependentUpon>AssetsGen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BuildFeed.xaml.cs">
-      <DependentUpon>BuildFeed.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ColorPalette.xaml.cs">
       <DependentUpon>ColorPalette.xaml</DependentUpon>
     </Compile>
@@ -273,10 +270,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\AssetsGen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\BuildFeed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
