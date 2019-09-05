@@ -50,10 +50,6 @@ namespace WeCode_Next
                     view.SelectedIndex = 2;
                     frame.Navigate(typeof(WindowsBlog));
                     break;
-                //case "BFeed":
-                //    view.SelectedIndex = 3;
-                //    frame.Navigate(typeof(BuildFeed));
-                //    break;
                 case "IBrowser":
                     view.SelectedIndex = 3;
                     frame.Navigate(typeof(IconBrowser));
@@ -91,7 +87,6 @@ namespace WeCode_Next
                 new Nav { Icon = "", Name = "Home", PageType = typeof(Home) },
                 new Nav { Icon = "", Name = "Dev Shortcuts", PageType = typeof(Tools) },
                 new Nav { Icon = "", Name = "Windows Blog", PageType = typeof(WindowsBlog) },
-                //new Nav { Icon = "", Name = "BuildFeed", PageType = typeof(BuildFeed) },
                 new Nav { Icon = "", Name = "Fonticon Browser", PageType = typeof(IconBrowser) },
                 new Nav { Icon = "", Name = "URI Tester", PageType = typeof(URILauncher) },
                 new Nav { Icon = "", Name = "GUID Generator", PageType = typeof(GUIDGen) },
@@ -104,7 +99,6 @@ namespace WeCode_Next
 
             List<Nav> BottomNavList = new List<Nav>
             {
-                //new Nav { Icon = "", Name = "Donation", PageType = typeof(Donation) },
                 new Nav { Icon = "", Name = "Settings & About", PageType = typeof(Settings) }
             };
            bottom_view.ItemsSource = BottomNavList;

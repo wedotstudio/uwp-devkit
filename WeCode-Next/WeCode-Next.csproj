@@ -121,9 +121,6 @@
     <Compile Include="Pages\ColorPalette.xaml.cs">
       <DependentUpon>ColorPalette.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Donation.xaml.cs">
-      <DependentUpon>Donation.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\GUIDGen.xaml.cs">
       <DependentUpon>GUIDGen.xaml</DependentUpon>
     </Compile>
@@ -284,10 +281,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ColorPalette.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Donation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
