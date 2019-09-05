@@ -103,7 +103,7 @@ namespace WeCode_Next.Pages
         {
             try
             {
-                string uri = (type) ? "https://blogs.windows.com/buildingapps/feed/" : "https://blogs.windows.com/windowsexperience/tag/windows-insider-program/feed/";
+                string uri = (type) ? "https://blogs.windows.com/windowsdeveloper/feed/" : "https://blogs.windows.com/windowsexperience/tag/windows-insider-program/feed/";
                 var client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync(new Uri(uri));
                 XDocument news = XDocument.Load(await response.Content.ReadAsStreamAsync());
