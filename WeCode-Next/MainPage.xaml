@@ -89,7 +89,7 @@
                         <AdaptiveTrigger MinWindowWidth="0" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="GeneralNav.Width" Value="40"/>
+                        <Setter Target="GeneralNav.Width" Value="38"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
